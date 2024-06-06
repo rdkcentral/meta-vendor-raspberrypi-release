@@ -1,4 +1,5 @@
 # This layer shall be common for all RPi variants.
+require conf/include/vendor_pkg_versions_halif_impl.inc
 
 PV_pn-packagegroup-vendor-layer = "1.0.0"
 PR_pn-packagegroup-vendor-layer = "r0"

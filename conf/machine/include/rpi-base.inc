@@ -79,7 +79,10 @@ MACHINE_FEATURES += "apm usbhost keyboard vfat ext2 screen touchscreen alsa blue
 # Raspberry Pi has no hardware clock
 MACHINE_FEATURES_BACKFILL_CONSIDERED = "rtc"
 
-MACHINE_EXTRA_RRECOMMENDS += "kernel-modules udev-rules-rpi"
+#RDKE-100: Commenting to resolve nothing provides err with packagegroup-base(foundation-layer)
+#MACHINE_EXTRA_RRECOMMENDS += "kernel-modules udev-rules-rpi"
+MACHINE_EXTRA_RRECOMMENDS += "kernel-modules"
+
 MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS += "${@oe.utils.conditional('ENABLE_I2C', '1', 'kernel-module-i2c-dev kernel-module-i2c-bcm2708', '', d)}"
 MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS += "${@oe.utils.conditional('ENABLE_IR', '1', 'kernel-module-gpio-ir kernel-module-gpio-ir-tx', '', d)}"
 

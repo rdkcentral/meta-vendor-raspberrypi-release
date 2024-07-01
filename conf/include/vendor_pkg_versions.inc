@@ -93,6 +93,14 @@ PV_pn-alsa-plugins = "1.2.1"
 PR_pn-alsa-plugins = "r0"
 PACKAGE_ARCH_pn-lib32-alsa-plugins = "${VENDOR_LAYER_EXTENSION}"
 
+PV_pn-python3-pycairo = "1.19.0"
+PR_pn-python3-pycairo = "r1"
+PACKAGE_ARCH_pn-lib32-python3-pycairo = "${VENDOR_LAYER_EXTENSION}"
+
+PV_pn-python3-pygobject = "3.34.0"
+PR_pn-python3-pygobject = "r1"
+PACKAGE_ARCH_pn-lib32-python3-pygobject = "${VENDOR_LAYER_EXTENSION}"
+
 #Gstreamer components
 
 GST_VERSION = "1.18.5"
@@ -137,6 +145,115 @@ PV_pn-gstreamer1.0-plugins-bad-meta = "${GST_VERSION}"
 PR_pn-gstreamer1.0-plugins-bad-meta = "${GST_REVISION}"
 PACKAGE_ARCH_pn-lib32-gstreamer1.0-plugins-bad-meta = "${VENDOR_LAYER_EXTENSION}"
 PREFERRED_VERSION_gstreamer1.0-plugins-bad-meta ?= "${GST_VERSION}"
+
+#Newly added
+PV_pn-gstreamer1.0-rtsp-server = "${GST_VERSION}"
+PR_pn-gstreamer1.0-rtsp-server = "${GST_REVISION}"
+PACKAGE_ARCH_pn-lib32-gstreamer1.0-rtsp-server = "${VENDOR_LAYER_EXTENSION}"
+
+PV_pn-gstreamer1.0-omx = "${GST_VERSION}"
+PR_pn-gstreamer1.0-omx = "${GST_REVISION}"
+PACKAGE_ARCH_pn-lib32-gstreamer1.0-omx = "${VENDOR_LAYER_EXTENSION}"
+
+PV_pn-gstreamer1.0-meta-base = "${GST_VERSION}"
+PR_pn-gstreamer1.0-meta-base = "${GST_REVISION}"
+PACKAGE_ARCH_pn-lib32-gstreamer1.0-meta-base = "${VENDOR_LAYER_EXTENSION}"
+
+PV_pn-gstreamer1.0-plugins-base-playback = "${GST_VERSION}"
+PR_pn-gstreamer1.0-plugins-base-playback = "${GST_REVISION}"
+PACKAGE_ARCH_pn-lib32-gstreamer1.0-plugins-base-playback = "${VENDOR_LAYER_EXTENSION}"
+
+PV_pn-gstreamer1.0-plugins-good-wavparse = "${GST_VERSION}"
+PR_pn-gstreamer1.0-plugins-good-wavparse = "${GST_REVISION}"
+PACKAGE_ARCH_pn-lib32-gstreamer1.0-plugins-good-wavparse = "${VENDOR_LAYER_EXTENSION}"
+
+PV_pn-gstreamer1.0-plugins-good-audiofx = "${GST_VERSION}"
+PR_pn-gstreamer1.0-plugins-good-audiofx = "${GST_REVISION}"
+PACKAGE_ARCH_pn-lib32-gstreamer1.0-plugins-good-audiofx = "${VENDOR_LAYER_EXTENSION}"
+
+PV_pn-gstreamer1.0-plugins-good-isomp4 = "${GST_VERSION}"
+PR_pn-gstreamer1.0-plugins-good-isomp4 = "${GST_REVISION}"
+PACKAGE_ARCH_pn-lib32-gstreamer1.0-plugins-good-isomp4 = "${VENDOR_LAYER_EXTENSION}"
+
+PV_pn-gstreamer1.0-plugins-good-audioparsers = "${GST_VERSION}"
+PR_pn-gstreamer1.0-plugins-good-audioparsers = "${GST_REVISION}"
+PACKAGE_ARCH_pn-lib32-gstreamer1.0-plugins-good-audioparsers = "${VENDOR_LAYER_EXTENSION}"
+
+PV_pn-gstreamer1.0-plugins-good-soup = "${GST_VERSION}"
+PR_pn-gstreamer1.0-plugins-good-soup = "${GST_REVISION}"
+PACKAGE_ARCH_pn-lib32-gstreamer1.0-plugins-good-soup = "${VENDOR_LAYER_EXTENSION}"
+
+PV_pn-gstreamer1.0-plugins-base-gio = "${GST_VERSION}"
+PR_pn-gstreamer1.0-plugins-base-gio = "${GST_REVISION}"
+PACKAGE_ARCH_pn-lib32-gstreamer1.0-plugins-base-gio = "${VENDOR_LAYER_EXTENSION}"
+
+PV_pn-gstreamer1.0-plugins-base-videoconvert  = "${GST_VERSION}"
+PR_pn-gstreamer1.0-plugins-base-videoconvert  = "${GST_REVISION}"
+PACKAGE_ARCH_pn-lib32-gstreamer1.0-plugins-base-videoconvert = "${VENDOR_LAYER_EXTENSION}"
+
+PV_pn-gstreamer1.0-plugins-base-videoscale  = "${GST_VERSION}"
+PR_pn-gstreamer1.0-plugins-base-videoscale  = "${GST_REVISION}"
+PACKAGE_ARCH_pn-lib32-gstreamer1.0-plugins-base-videoscale = "${VENDOR_LAYER_EXTENSION}"
+
+PV_pn-gstreamer1.0-plugins-base-volume  = "${GST_VERSION}"
+PR_pn-gstreamer1.0-plugins-base-volume  = "${GST_REVISION}"
+PACKAGE_ARCH_pn-lib32-gstreamer1.0-plugins-base-volume = "${VENDOR_LAYER_EXTENSION}"
+
+PV_pn-gstreamer1.0-plugins-base-typefindfunctions  = "${GST_VERSION}"
+PR_pn-gstreamer1.0-plugins-base-typefindfunctions  = "${GST_REVISION}"
+PACKAGE_ARCH_pn-lib32-gstreamer1.0-plugins-base-typefindfunctions = "${VENDOR_LAYER_EXTENSION}"
+
+PV_pn-gstreamer1.0-plugins-good-autodetect  = "${GST_VERSION}"
+PR_pn-gstreamer1.0-plugins-good-autodetect  = "${GST_REVISION}"
+PACKAGE_ARCH_pn-lib32-gstreamer1.0-plugins-good-autodetect = "${VENDOR_LAYER_EXTENSION}"
+
+PV_pn-gstreamer1.0-plugins-good-avi  = "${GST_VERSION}"
+PR_pn-gstreamer1.0-plugins-good-avi  = "${GST_REVISION}"
+PACKAGE_ARCH_pn-lib32-gstreamer1.0-plugins-good-avi = "${VENDOR_LAYER_EXTENSION}"
+
+PV_pn-gstreamer1.0-plugins-good-deinterlace  = "${GST_VERSION}"
+PR_pn-gstreamer1.0-plugins-good-deinterlace  = "${GST_REVISION}"
+PACKAGE_ARCH_pn-lib32-gstreamer1.0-plugins-good-deinterlace = "${VENDOR_LAYER_EXTENSION}"
+
+PV_pn-gstreamer1.0-plugins-good-interleave  = "${GST_VERSION}"
+PR_pn-gstreamer1.0-plugins-good-interleave  = "${GST_REVISION}"
+PACKAGE_ARCH_pn-lib32-gstreamer1.0-plugins-good-interleave = "${VENDOR_LAYER_EXTENSION}"
+
+PV_pn-gstreamer1.0-plugins-bad-dash  = "${GST_VERSION}"
+PR_pn-gstreamer1.0-plugins-bad-dash  = "${GST_REVISION}"
+PACKAGE_ARCH_pn-lib32-gstreamer1.0-plugins-bad-dash = "${VENDOR_LAYER_EXTENSION}"
+
+PV_pn-gstreamer1.0-plugins-bad-mpegtsdemux  = "${GST_VERSION}"
+PR_pn-gstreamer1.0-plugins-bad-mpegtsdemux  = "${GST_REVISION}"
+PACKAGE_ARCH_pn-lib32-gstreamer1.0-plugins-bad-mpegtsdemux = "${VENDOR_LAYER_EXTENSION}"
+
+PV_pn-gstreamer1.0-plugins-bad-smoothstreaming  = "${GST_VERSION}"
+PR_pn-gstreamer1.0-plugins-bad-smoothstreaming  = "${GST_REVISION}"
+PACKAGE_ARCH_pn-lib32-gstreamer1.0-plugins-bad-smoothstreaming = "${VENDOR_LAYER_EXTENSION}"
+
+PV_pn-gstreamer1.0-plugins-bad-videoparsersbad  = "${GST_VERSION}"
+PR_pn-gstreamer1.0-plugins-bad-videoparsersbad  = "${GST_REVISION}"
+PACKAGE_ARCH_pn-lib32-gstreamer1.0-plugins-bad-videoparsersbad = "${VENDOR_LAYER_EXTENSION}"
+
+PV_pn-gstreamer1.0-plugins-bad-opusparse  = "${GST_VERSION}"
+PR_pn-gstreamer1.0-plugins-bad-opusparse  = "${GST_REVISION}"
+PACKAGE_ARCH_pn-lib32-gstreamer1.0-plugins-bad-opusparse = "${VENDOR_LAYER_EXTENSION}"
+
+PV_pn-gstreamer1.0-plugins-good-matroska  = "${GST_VERSION}"
+PR_pn-gstreamer1.0-plugins-good-matroska  = "${GST_REVISION}"
+PACKAGE_ARCH_pn-lib32-gstreamer1.0-plugins-good-matroska = "${VENDOR_LAYER_EXTENSION}"
+
+PV_pn-gstreamer1.0-plugins-base-app  = "${GST_VERSION}"
+PR_pn-gstreamer1.0-plugins-base-app  = "${GST_REVISION}"
+PACKAGE_ARCH_pn-lib32-gstreamer1.0-plugins-base-app = "${VENDOR_LAYER_EXTENSION}"
+
+PV_pn-gstreamer1.0-plugins-base-audioconvert  = "${GST_VERSION}"
+PR_pn-gstreamer1.0-plugins-base-audioconvert  = "${GST_REVISION}"
+PACKAGE_ARCH_pn-lib32-gstreamer1.0-plugins-base-audioconvert = "${VENDOR_LAYER_EXTENSION}"
+
+PV_pn-gstreamer1.0-plugins-base-audioresample  = "${GST_VERSION}"
+PR_pn-gstreamer1.0-plugins-base-audioresample  = "${GST_REVISION}"
+PACKAGE_ARCH_pn-lib32-gstreamer1.0-plugins-base-audioresample = "${VENDOR_LAYER_EXTENSION}"
 
 # Westeros components
 WESTEROS_VERSION = "1.0.0"

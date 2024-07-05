@@ -46,6 +46,9 @@ PV_pn-udev-rules-rpi = "1.0"
 PR_pn-udev-rules-rpi = "r0"
 PACKAGE_ARCH_pn-udev-rules-rpi = "${VENDOR_LAYER_EXTENSION}"
 
+PV_pn-sysint-soc = "1.0.0"
+PR_pn-sysint-soc = "r0"
+PACKAGE_ARCH_pn-sysint-soc = "${VENDOR_LAYER_EXTENSION}"
 
 #OSS Components
 

@@ -230,6 +230,23 @@ do_deploy() {
                 ;;
         esac
     fi
+
+    CMDLINE_FILE="${DEPLOYDIR}/${BOOTFILES_DIR_NAME}/cmdline.txt"
+    if [ ! -f "${CMDLINE_FILE}" ]; then
+        echo > ${CMDLINE_FILE}
+    fi
+
+    sed -i '/dwc_otg.lpm_enable=0/!s|$| dwc_otg.lpm_enable=0|' ${CMDLINE_FILE}
+    sed -i '/console=serial0,115200/!s|$| console=serial0,115200|' ${CMDLINE_FILE}
+    sed -i '/root=\/dev\/mmcblk0p2/!s|$| root=/dev/mmcblk0p2|' ${CMDLINE_FILE}
+    sed -i '/rootfstype=ext4/!s|$| rootfstype=ext4|' ${CMDLINE_FILE}
+    sed -i '/rootwait/!s|$| rootwait|' ${CMDLINE_FILE}
+    sed -i '/cgroup_enable=memory/!s|$| cgroup_enable=memory|' ${CMDLINE_FILE}
+    sed -i '/cgroup_memory=1/!s|$| cgroup_memory=1|' ${CMDLINE_FILE}
+
+    if [ ${PITFT} = "1" ]; then
+        sed -i '/fbcon=map:10 fbcon=font:VGA8x8/!s|$| fbcon=map:10 fbcon=font:VGA8x8|' ${CMDLINE_FILE}
+    fi
 }
 
 do_deploy_append_raspberrypi3-64() {

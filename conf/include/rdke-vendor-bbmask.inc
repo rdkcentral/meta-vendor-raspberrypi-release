@@ -12,3 +12,7 @@ BBMASK += " meta-openembedded/meta-oe/recipes-devtools/breakpad/breakpad_svn.bb"
 BBMASK += " meta-rdk-halif-headers/recipes-rdk-halif-headers/hdmicec"
 BBMASK += " meta-rdk-halif-headers/recipes-rdk-halif-headers/tvsettings"
 
+#Temp mask gstd to fix staging-ipk-pkgs build error for gstreamer1.0-rtsp-server-dev in applciation build
+BBMASK += " meta-openembedded/meta-multimedia/recipes-multimedia/gstreamer-1.0/gstd_git.bb"
+
+

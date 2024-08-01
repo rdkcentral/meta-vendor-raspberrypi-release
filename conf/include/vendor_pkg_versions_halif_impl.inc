@@ -16,3 +16,7 @@ PV_pn-mfrlibs-hal-raspberrypi4 = "1.0.0"
 PR_pn-mfrlibs-hal-raspberrypi4 = "r0"
 PACKAGE_ARCH_pn-lib32-mfrlibs-hal-raspberrypi4 = "${VENDOR_LAYER_EXTENSION}"
 
+SRCREV_pn-hdmicec-hal-raspberrypi4 = "1.0.0"
+PV_pn-hdmicec-hal-raspberrypi4 = "1.0.0"
+PR_pn-hdmicec-hal-raspberrypi4 = "r0"
+PACKAGE_ARCH_pn-lib32-hdmicec-hal-raspberrypi4 = "${VENDOR_LAYER_EXTENSION}"

@@ -294,3 +294,7 @@ PR_pn-westeros-sink = "${WESTEROS_REVISION}"
 PACKAGE_ARCH_pn-lib32-westeros-sink = "${VENDOR_LAYER_EXTENSION}"
 SRCREV_pn-westeros-sink = "${WESTEROS_SRCREV}"
 
+PV_pn-wayland-default-egl = "1.18.0"
+PR_pn-wayland-default-egl = "r0"
+PACKAGE_ARCH_pn-lib32-wayland-default-egl = "${VENDOR_LAYER_EXTENSION}"
+

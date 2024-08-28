@@ -1,6 +1,6 @@
 # This layer shall be common for all RPi variants.
 
-PV_pn-packagegroup-vendor-layer = "1.0.0"
+PV_pn-packagegroup-vendor-layer = "1.2.4"
 PR_pn-packagegroup-vendor-layer = "r0"
 
 # Refer Comcast Jira RDK-50570: PACKAGE_ARCH_pn should have MLPREFIX for successful build.

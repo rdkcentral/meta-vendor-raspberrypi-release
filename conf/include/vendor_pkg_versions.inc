@@ -1,6 +1,6 @@
 # This layer shall be common for all RPi variants.
 
-PV_pn-packagegroup-vendor-layer = "1.2.4"
+PV_pn-packagegroup-vendor-layer = "1.2.5"
 PR_pn-packagegroup-vendor-layer = "r0"
 
 # Refer Comcast Jira RDK-50570: PACKAGE_ARCH_pn should have MLPREFIX for successful build.
@@ -293,4 +293,8 @@ PV_pn-westeros-sink = "${WESTEROS_VERSION}"
 PR_pn-westeros-sink = "${WESTEROS_REVISION}"
 PACKAGE_ARCH_pn-lib32-westeros-sink = "${VENDOR_LAYER_EXTENSION}"
 SRCREV_pn-westeros-sink = "${WESTEROS_SRCREV}"
+
+PV_pn-wayland-default-egl = "1.18.0"
+PR_pn-wayland-default-egl = "r0"
+PACKAGE_ARCH_pn-lib32-wayland-default-egl = "${VENDOR_LAYER_EXTENSION}"
 

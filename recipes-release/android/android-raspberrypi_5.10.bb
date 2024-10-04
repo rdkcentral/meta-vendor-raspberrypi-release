@@ -18,7 +18,7 @@ SRC_URI = "\
    "
 
 SRC_URI[vendor-linux.sha256sum] = "d89b33c7b1380681dfd519c1f82f4d1653e33a9163785a2480636d2cd59184ff"
-SRC_URI[vendor-dtb.sha256sum] = "27e10eeea0caa3b27c59a20472b22bfa845d521b7fdfc68d159954bf31c48e1c"
+SRC_URI[vendor-dtb.sha256sum] = "7924e40a1c3e236ad4d0a2f97311b8b49476fa11768014b06c6a23234d2789e4"
 
 do_unpack_extra() {
     mkdir -p ${S}

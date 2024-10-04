@@ -13,5 +13,3 @@ PACKAGE_EXTRA_ARCHS_append = " ${VENDOR_LAYER_EXTENSION}"
 IPK_FEED_URIS += " \
                 ${VENDOR_LAYER_EXTENSION}##${VENDOR_IPK_SERVER_PATH} "
 
-require conf/include/vendor_pkg_versions.inc
-

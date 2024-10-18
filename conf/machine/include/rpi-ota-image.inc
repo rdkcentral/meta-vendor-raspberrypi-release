@@ -1,8 +1,6 @@
 OTA_IMAGE_NAME = "${MACHINE_IMAGE_NAME}-${IMAGE_BASENAME}-ota-image.wic"
 
 do_create_ota_image_wic() {
-    bbnote "Arun: from do_create_ota_image_wic..."
-
     # Find the generated WIC image
     WIC_IMAGE=$(ls ${DEPLOY_DIR_IMAGE}/${IMAGE_BASENAME}-*.wic | head -n 1)
     if [ -z "${WIC_IMAGE}" ]; then
@@ -22,11 +20,11 @@ do_create_ota_image_wic() {
     PARTITIONS=$(parted -s ${OTA_WIC_IMAGE} print | awk '/^ [0-9]/ {print $1, $NF}')
     echo "${PARTITIONS}" | while read -r PART_NUM PART_NAME; do
         bbnote "PART_NUM = ${PART_NUM} and PART_NAME = '${PART_NAME}'."
-        if [ "${PART_NAME}" = "root2" ] || [ "${PART_NAME}" = "persist" ]; then
+        if [ "${PART_NAME}" = "root2" ] || [ "${PART_NAME}" = "persist" ] || [ "${PART_NUM}" = "3" ] || [ "${PART_NUM}" = "4" ]; then
             bbnote "Deleting partition ${PART_NUM} with label ${PART_NAME}..."
             sfdisk --delete ${OTA_WIC_IMAGE} ${PART_NUM}
         else
-            bbnote "No match found for partition ${PART_NUM} with label ${PART_NAME}."
+            bbnote "No match found for partition ${PART_NUM} or with label ${PART_NAME}."
         fi
     done
 

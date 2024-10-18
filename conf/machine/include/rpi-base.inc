@@ -5,8 +5,11 @@ include conf/machine/include/rpi-default-providers.inc
 SOC_FAMILY = "rpi"
 include conf/machine/include/soc-family.inc
 
-IMAGE_FSTYPES ?= "tar.bz2 ext3 wic.bz2 wic.bmap"
+IMAGE_FSTYPES ?= "tar.bz2 wic wic.bz2 wic.bmap"
 WKS_FILE ?= "sdimage-raspberrypi.wks"
+
+# Support for RPI RDK OTA Image
+include conf/machine/include/rpi-ota-image.inc
 
 XSERVER = " \
     xserver-xorg \

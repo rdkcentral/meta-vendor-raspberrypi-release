@@ -17,8 +17,8 @@ SRC_URI = "\
    ${VENDOR_IPK_SERVER_PATH}/kernel-devicetree_${PV}-${PR}_${MACHINE}-vendor.ipk;subdir=${BP};name=vendor-dtb \
    "
 
-SRC_URI[vendor-linux.sha256sum] = "0feffd8c7787db5cc3b5062d7843eb4f1efcf76fe8688387f6b7a857bcb303ec"
-SRC_URI[vendor-dtb.sha256sum] = "ce4b60ba750b19496a3d4b531483779e7dbb8df610923dddb488f031a2e91dc3"
+SRC_URI[vendor-linux.sha256sum] = "e39c3fb3673a5436eebc352b845790940bbda474f2b712d4d5cc0163eda306b0"
+SRC_URI[vendor-dtb.sha256sum] = "ad818f005fd6d6049bb245cb3514d7f0e9546106530fa493ecb39718ab14ccc7"
 
 do_unpack_extra() {
     mkdir -p ${S}

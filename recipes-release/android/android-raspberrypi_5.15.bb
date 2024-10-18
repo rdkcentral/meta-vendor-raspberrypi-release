@@ -8,8 +8,8 @@ inherit kernel
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
 COMPATIBLE_MACHINE = "^rpi$"
 
-VERSION = "5.10.95-v8"
-PV = "5.10.82"
+VERSION = "5.15.92-v8"
+PV = "5.15.92"
 PR = "r0"
 
 SRC_URI = "\
@@ -17,8 +17,8 @@ SRC_URI = "\
    ${VENDOR_IPK_SERVER_PATH}/kernel-devicetree_${PV}-${PR}_${MACHINE}-vendor.ipk;subdir=${BP};name=vendor-dtb \
    "
 
-SRC_URI[vendor-linux.sha256sum] = "0feffd8c7787db5cc3b5062d7843eb4f1efcf76fe8688387f6b7a857bcb303ec"
-SRC_URI[vendor-dtb.sha256sum] = "ce4b60ba750b19496a3d4b531483779e7dbb8df610923dddb488f031a2e91dc3"
+SRC_URI[vendor-linux.sha256sum] = "8d2f66e8a8a350ea83f6928876b08c7253cf10b9a5236de51dc6f5b1b27f903b"
+SRC_URI[vendor-dtb.sha256sum] = "99f2022473aa6e19944a8b09febcae07f74fe5c2bfb9e78a92b5b6c1cb8a046d"
 
 do_unpack_extra() {
     mkdir -p ${S}

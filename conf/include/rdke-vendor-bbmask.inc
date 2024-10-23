@@ -16,3 +16,4 @@ BBMASK += " meta-rdk/recipes-qt/*"
 
 DISTRO_FEATURES:remove = "systimemgr"
 DISTRO_FEATURES:remove = ' enable_rialto'
+LICENSE_FLAGS_ACCEPTED:append  = " commercial_${MLPREFIX}fdk-aac "

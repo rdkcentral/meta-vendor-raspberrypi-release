@@ -11,3 +11,8 @@ BBMASK += " meta-openembedded/meta-oe/recipes-devtools/breakpad/breakpad_svn.bb"
 # FIXME: unmask as integration progresses
 BBMASK += " meta-rdk-halif-headers/recipes-rdk-halif-headers/tvsettings"
 
+#workarounds
+BBMASK += " meta-rdk/recipes-qt/*"
+
+DISTRO_FEATURES:remove = "systimemgr"
+DISTRO_FEATURES:remove = ' enable_rialto'

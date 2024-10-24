@@ -11,9 +11,11 @@ BBMASK += " meta-openembedded/meta-oe/recipes-devtools/breakpad/breakpad_svn.bb"
 # FIXME: unmask as integration progresses
 BBMASK += " meta-rdk-halif-headers/recipes-rdk-halif-headers/tvsettings"
 
-
+# Remove when systimemgr is enabled for RDKM
 DISTRO_FEATURES:remove = "systimemgr"
-DISTRO_FEATURES:remove = ' enable_rialto'
-LICENSE_FLAGS_ACCEPTED:append  = " commercial_${MLPREFIX}fdk-aac "
 
-SRCREV:pn-storagemanager = "f5d34a7a8ae13d94fea0f7046976e22f0d11c97d"
+# enable distro with RDKVREFPLT-3798 
+DISTRO_FEATURES:remove = ' enable_rialto'
+
+# To do: Remove when RDK-54034 is resolved
+LICENSE_FLAGS_ACCEPTED:append  = " commercial_${MLPREFIX}fdk-aac "

@@ -11,3 +11,14 @@ BBMASK += " meta-openembedded/meta-oe/recipes-devtools/breakpad/breakpad_svn.bb"
 # FIXME: unmask as integration progresses
 BBMASK += " meta-rdk-halif-headers/recipes-rdk-halif-headers/tvsettings"
 
+# Remove when systimemgr is enabled for RDKM
+DISTRO_FEATURES:remove = "systimemgr"
+
+# enable distro with RDKVREFPLT-3798 
+DISTRO_FEATURES:remove = ' enable_rialto'
+
+# To do: Remove when RDK-54034 is resolved
+LICENSE_FLAGS_ACCEPTED:append  = " commercial_${MLPREFIX}fdk-aac "
+
+# To fix RDE-331 
+SRCREV:pn-bluetooth-mgr = "04e090730275276e26741564b4bab7a799ef2d4c"

@@ -7,10 +7,6 @@ BBMASK += " meta-rdk-oss-reference/recipes-kernel/linux-libc-headers/linux-libc-
 BBMASK += " meta-openembedded/meta-multimedia/recipes-multimedia/tinyalsa/tinyalsa.bb"
 BBMASK += " meta-openembedded/meta-oe/recipes-devtools/breakpad/breakpad_svn.bb"
 
-#From meta-rdk-halif-headers
-# FIXME: unmask as integration progresses
-BBMASK += " meta-rdk-halif-headers/recipes-rdk-halif-headers/tvsettings"
-
 # Remove when systimemgr is enabled for RDKM
 DISTRO_FEATURES:remove = "systimemgr"
 

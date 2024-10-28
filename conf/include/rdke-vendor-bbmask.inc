@@ -20,3 +20,6 @@ LICENSE_FLAGS_ACCEPTED:append  = " commercial_${MLPREFIX}fdk-aac "
 SRCREV:pn-bluetooth-mgr = "04e090730275276e26741564b4bab7a799ef2d4c"
 # Temp solution for RDK-53835
 SRCREV:pn-telemetry = "7a80452173d1809153fd86f75f3e95d1611b230e"
+
+# Fix for RDK-53836 firebolt-native-sdk
+SRCREV:pn-tts = "7e7c799d0900317f8c1679c7e5132952bc8d4b51"

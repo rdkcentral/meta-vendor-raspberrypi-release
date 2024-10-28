@@ -60,6 +60,13 @@ python do_custom_package(){
     with open(kernel_abi_ver_file, "w") as abi_ver_file:
         abi_ver_file.write("%s" % linux_ver)
 }
+
+# RDKVREFPLT-3709: do_image_wic error - In kirkstone, kernel_do_install task in kernel.bbclass doesnt 
+# create symlink for KERNEL_IMAGETYPE which is required by do_image_wic to create wic image.
+do_install:append() {
+        ln -sf ${imageType}-${KERNEL_VERSION} ${D}/${KERNEL_IMAGEDEST}/${imageType}
+}
+
 addtask do_custom_package after do_install_image before do_build
 
 do_install_image () {

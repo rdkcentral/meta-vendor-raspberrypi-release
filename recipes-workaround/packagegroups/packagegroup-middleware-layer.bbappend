@@ -9,5 +9,8 @@ RDEPENDS:${PN}:remove += " remotedebugger\
                            webcfg \
                            ctrlm-main \
                            fdk-aac \
+                           virtual/ca-certificates-trust-store \
                          "
+
+RDEPENDS:${PN}:append = " ca-certificates-default-certs "
 

@@ -8,5 +8,6 @@ RDEPENDS:${PN}:remove += " remotedebugger\
                            systimemgr \
                            webcfg \
                            ctrlm-main \
+                           fdk-aac \
                          "
 

@@ -13,11 +13,10 @@ DISTRO_FEATURES:remove = "systimemgr"
 # enable distro with RDKVREFPLT-3798 
 DISTRO_FEATURES:remove = ' enable_rialto'
 
-# To do: Remove when RDK-54034 is resolved
-LICENSE_FLAGS_ACCEPTED:append  = " commercial_${MLPREFIX}fdk-aac "
-
 # To fix RDE-331 
-SRCREV:pn-bluetooth-mgr = "04e090730275276e26741564b4bab7a799ef2d4c"
+SRCREV:pn-bluetooth-mgr = "d56af28b6166ffa3f7bb838b44987f84e47e6642"
+SRCREV:pn-bluetooth-core = "226da0d9a57cdd659401b53d7de803ef1027df04"
+
 # Temp solution for RDK-53835
 SRCREV:pn-telemetry = "7a80452173d1809153fd86f75f3e95d1611b230e"
 

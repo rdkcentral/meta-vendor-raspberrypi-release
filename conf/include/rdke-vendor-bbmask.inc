@@ -21,7 +21,7 @@ SRCREV:pn-bluetooth-core = "226da0d9a57cdd659401b53d7de803ef1027df04"
 SRCREV:pn-telemetry = "7a80452173d1809153fd86f75f3e95d1611b230e"
 
 # Fix for RDK-53836 firebolt-native-sdk
-SRCREV:pn-tts = "7e7c799d0900317f8c1679c7e5132952bc8d4b51"
+SRCREV:pn-tts = "17a14cbadef9df5ce7f3e685e8333ecf6ae6b949"
 
 # Temp fix for RDK-54180, remove once the ticket is resolved
 SRCREV_rdkfw = "611668991cd454578740848a4ab34729b7454f7e"

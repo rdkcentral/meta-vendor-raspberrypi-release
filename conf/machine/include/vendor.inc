@@ -19,7 +19,7 @@ update_dropbearkey_to_rw_path() {
     if [ -f "${IMAGE_ROOTFS}/lib/systemd/system/dropbearkey.service" ]; then
         sed -i '/\/var/d; /\/var\/lib/d; s/\/etc\/dropbear/\/opt\/dropbear/g; s/\/var\/lib\/dropbear/\/opt\/dropbear/g' ${IMAGE_ROOTFS}/lib/systemd/system/dropbearkey.service
     else
-        echo "No dropbearkey.service file detected, SSH may not work."
+        echo "No dropbearkey.service file detected at '${IMAGE_ROOTFS}', SSH may not work."
     fi
 }
 ROOTFS_POSTPROCESS_COMMAND += "update_dropbearkey_to_rw_path; "

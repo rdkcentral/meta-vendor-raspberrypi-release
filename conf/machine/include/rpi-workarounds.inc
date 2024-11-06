@@ -4,10 +4,6 @@ DISTRO_FEATURES:remove = "systimemgr"
 # enable distro with RDKVREFPLT-3798 
 DISTRO_FEATURES:remove = ' enable_rialto'
 
-# To fix RDE-331 
-SRCREV:pn-bluetooth-mgr = "d56af28b6166ffa3f7bb838b44987f84e47e6642"
-SRCREV:pn-bluetooth-core = "226da0d9a57cdd659401b53d7de803ef1027df04"
-
 # Temp solution for RDK-53835
 SRCREV:pn-telemetry = "7a80452173d1809153fd86f75f3e95d1611b230e"
 

@@ -1,4 +1,3 @@
-DEPENDS:remove += " curl-netflix"
 
 RDEPENDS:${PN}:remove += " remotedebugger\
                            rdksysctl \

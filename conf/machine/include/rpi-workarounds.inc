@@ -4,9 +4,6 @@ DISTRO_FEATURES:remove = "systimemgr"
 # enable distro with RDKVREFPLT-3798 
 DISTRO_FEATURES:remove = ' enable_rialto'
 
-# Temp solution for RDK-53835
-SRCREV:pn-telemetry = "7a80452173d1809153fd86f75f3e95d1611b230e"
-
 # Fix for RDK-53836 firebolt-native-sdk
 SRCREV:pn-tts = "c2e8a894023dc2709a3b63b169803dce0653d1ea"
 

@@ -6,7 +6,6 @@ RDEPENDS:${PN}:remove += " rdksysctl \
                            systimemgr \
                            webcfg \
                            ctrlm-main \
-                           fdk-aac \
                            virtual/ca-certificates-trust-store \
                          "
 

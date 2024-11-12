@@ -1,6 +1,5 @@
 
-RDEPENDS:${PN}:remove += " remotedebugger\
-                           rdksysctl \
+RDEPENDS:${PN}:remove += " rdksysctl \
                            xdial \
                            systimemgrfactory \
                            systimemgrinetrface \

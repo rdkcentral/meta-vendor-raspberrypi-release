@@ -78,5 +78,11 @@ python do_create_ota_image_wic() {
     note("Compressed OTA image created successfully: {}".format(ota_tar_gz_path))
 }
 
-addtask do_create_ota_image_wic after do_image do_rootfs_wicenv do_image_wic do_image_complete before do_populate_lic_deploy
+addtask do_create_ota_image_wic after do_image_complete before do_populate_lic_deploy
+do_create_ota_image_wic[recrdeps] = "do_build"
+do_create_ota_image_wic[depends] += " \
+    virtual/kernel:do_deploy \
+    rpi-bootfiles:do_deploy \
+    ${@bb.utils.contains('RPI_USE_U_BOOT', '1', 'u-boot:do_deploy', '',d)} \
+    "
 

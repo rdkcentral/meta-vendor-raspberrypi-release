@@ -1,6 +1,5 @@
 
-RDEPENDS:${PN}:remove += " rdksysctl \
-                           xdial \
+RDEPENDS:${PN}:remove += " xdial \
                            systimemgrfactory \
                            systimemgrinetrface \
                            systimemgr \

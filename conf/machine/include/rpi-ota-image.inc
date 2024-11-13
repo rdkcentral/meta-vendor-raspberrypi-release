@@ -78,7 +78,7 @@ python do_create_ota_image_wic() {
     note("Compressed OTA image created successfully: {}".format(ota_tar_gz_path))
 }
 
-addtask do_image_wic after do_image_complete do_rootfs before do_build
+addtask do_image_wic after do_rootfs before do_build
 addtask do_create_ota_image_wic after do_image_wic do_image_complete do_rootfs before do_populate_lic_deploy do_build
 do_create_ota_image_wic[recrdeps] = "do_build"
 do_create_ota_image_wic[depends] += " \

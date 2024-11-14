@@ -1,6 +1,3 @@
-# Remove when systimemgr is enabled for RDKM
-DISTRO_FEATURES:remove = "systimemgr"
-
 # enable distro with RDKVREFPLT-3798 
 DISTRO_FEATURES:remove = ' enable_rialto'
 

@@ -1,12 +1,7 @@
 
-RDEPENDS:${PN}:remove += " rdksysctl \
-                           xdial \
-                           systimemgrfactory \
-                           systimemgrinetrface \
-                           systimemgr \
+RDEPENDS:${PN}:remove += " xdial \
                            webcfg \
                            ctrlm-main \
-                           fdk-aac \
                            virtual/ca-certificates-trust-store \
                          "
 

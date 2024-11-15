@@ -14,9 +14,9 @@ python do_create_ota_image_wic() {
     from bb import note, error
 
     deploy_dir_image = d.getVar('DEPLOY_DIR_IMAGE')
-	image_basename = d.getVar('IMAGE_NAME')
-	if not image_basename:
-		bb.fatal("IMAGE_NAME is not set or is empty.")
+    image_basename = d.getVar('IMAGE_NAME')
+    if not image_basename:
+        bb.fatal("IMAGE_NAME is not set or is empty.")
 
     ota_image_name = d.getVar('OTA_IMAGE_NAME')
     ota_tar_gz_name = ota_image_name + ".tar.gz"

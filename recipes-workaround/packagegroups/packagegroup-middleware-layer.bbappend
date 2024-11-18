@@ -1,7 +1,6 @@
 
 RDEPENDS:${PN}:remove += " xdial \
                            webcfg \
-                           ctrlm-main \
                            virtual/ca-certificates-trust-store \
                          "
 

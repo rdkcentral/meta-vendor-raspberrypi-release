@@ -1,2 +1,2 @@
 RPROVIDES:${PN} = "virtual/default-font"
-RPROVIDES = "virtual/default-font"
+PROVIDES = "virtual/default-font"

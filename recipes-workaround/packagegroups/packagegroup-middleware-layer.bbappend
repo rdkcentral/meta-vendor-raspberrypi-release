@@ -1,6 +1,5 @@
 
 RDEPENDS:${PN}:remove += " xdial \
-                           virtual/ca-certificates-trust-store \
+                           webcfg \
                          "
 
-RDEPENDS:${PN}:append = " ca-certificates-default-certs "

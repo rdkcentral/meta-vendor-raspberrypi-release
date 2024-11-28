@@ -6,7 +6,7 @@ PROJECT_BRANCH ?= "${RDKE_GITHUB_BRANCH}"
 
 VENDOR_LAYER_EXTENSION = "${MACHINE}-vendor"
 
-VENDOR_IPK_SERVER_PATH = "${RDK_ARTIFACTS_BASE_URL}/opkg/${MACHINE}/ipks/${VENDOR_LAYER_EXTENSION}/4.0.0"
+VENDOR_IPK_SERVER_PATH = "https://partners.artifactory.comcast.com/artifactory/opkg/raspberrypi4-64-rdke/ipks/raspberrypi4-64-rdke-vendor/develop/rdk_gstreamerutils"
 
 PACKAGE_EXTRA_ARCHS:append = " ${VENDOR_LAYER_EXTENSION}"
 

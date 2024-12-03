@@ -1,5 +1,4 @@
 # TODO: Clean-up when MW aligns with generic
-require conf/machine/include/rpi-workarounds.inc
 
 # Fix the build error; related to: https://github.com/rdk-e/meta-image-support/pull/136
 PROJECT_BRANCH ?= "${RDKE_GITHUB_BRANCH}"

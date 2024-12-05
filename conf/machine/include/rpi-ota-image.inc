@@ -79,6 +79,10 @@ python do_create_ota_image_wic() {
         tar.add(ota_wic_image, arcname=os.path.basename(ota_wic_image))
 
     note("Compressed OTA image created successfully: {}".format(ota_tar_gz_path))
+
+    # Remove the OTA WIC file to save space keeping only the compressed one.
+    os.remove(ota_wic_image)
+    note("Removed intermediate OTA WIC file to save space: {}".format(ota_wic_image))
 }
 
 addtask do_image_wic after do_rootfs before do_build

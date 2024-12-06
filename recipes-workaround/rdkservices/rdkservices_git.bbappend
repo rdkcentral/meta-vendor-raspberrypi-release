@@ -1,1 +1,1 @@
-PACKAGECONFIG:remove = " xcast opencdmi_wv opencdmi_pr4"
+PACKAGECONFIG:remove = " opencdmi_wv opencdmi_pr4"

@@ -1,4 +1,4 @@
-
+FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 # Remove once RDKEMW-421 is fixed and release
 SRC_URI += " file://dobby.json"
 

@@ -85,5 +85,12 @@ python do_create_ota_image_wic() {
     note("Removed intermediate OTA WIC file to save space: {}".format(ota_wic_image))
 }
 
-addtask do_image_wic after do_rootfs before do_build
-addtask do_create_ota_image_wic after do_image_wic do_image_complete do_rootfs before do_populate_lic_deploy do_build
+# Add the task only for image recipes
+python () {
+    if d.getVar('IMAGE_BASENAME'):
+        d.appendVarFlag('do_create_ota_image_wic', 'depends', 'do_image_wic')
+        d.appendVarFlag('do_create_ota_image_wic', 'after', 'do_image_wic')
+        d.appendVarFlag('do_create_ota_image_wic', 'before', 'do_populate_lic_deploy do_build')
+    else:
+        bb.note("do_create_ota_image_wic task not added as IMAGE_BASENAME is not set.")
+}

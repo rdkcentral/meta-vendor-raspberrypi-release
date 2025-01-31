@@ -11,25 +11,35 @@ python do_create_ota_image_wic() {
     import os
     import subprocess
     import tarfile
-    from bb import note, error
+    from bb import note, error, fatal
 
     deploy_dir_image = d.getVar('DEPLOY_DIR_IMAGE')
-    image_basename = d.getVar('IMAGE_NAME')
+    image_basename = d.getVar('IMAGE_LINK_NAME')
+
+    note("DEPLOY_DIR_IMAGE: {}".format(deploy_dir_image))
+    note("IMAGE_LINK_NAME: {}".format(image_basename))
+
+    if not deploy_dir_image:
+        fatal("DEPLOY_DIR_IMAGE is not set or is empty.")
     if not image_basename:
-        bb.fatal("IMAGE_NAME is not set or is empty.")
+        fatal("IMAGE_LINK_NAME is not set or is empty.")
 
     ota_image_name = d.getVar('OTA_IMAGE_NAME')
     ota_tar_gz_name = ota_image_name + ".tar.gz"
 
+    note("OTA_IMAGE_NAME: {}".format(ota_image_name))
+    note("OTA_TAR_GZ_NAME: {}".format(ota_tar_gz_name))
+
     # Find the generated WIC image
     wic_image = None
     for file in os.listdir(deploy_dir_image):
+        note("Checking file: {}".format(file))
         if file.startswith(image_basename) and file.endswith('.wic'):
-            wic_image = os.path.join(deploy_dir_image, file)
+            wic_image = os.path.realpath(os.path.join(deploy_dir_image, file))
             break
 
     if not wic_image:
-        error("Not able to find {}-*.wic for OTA image creation.".format(image_basename))
+        error("Not able to find {}*.wic for OTA image creation.".format(image_basename))
         return 1
 
     # Create a copy of the uncompressed WIC image
@@ -85,12 +95,6 @@ python do_create_ota_image_wic() {
     note("Removed intermediate OTA WIC file to save space: {}".format(ota_wic_image))
 }
 
-# Add the task only for image recipes
-python () {
-    if d.getVar('IMAGE_BASENAME'):
-        d.appendVarFlag('do_create_ota_image_wic', 'depends', 'do_image_wic')
-        d.appendVarFlag('do_create_ota_image_wic', 'after', 'do_image_wic')
-        d.appendVarFlag('do_create_ota_image_wic', 'before', 'do_populate_lic_deploy do_build')
-    else:
-        bb.note("do_create_ota_image_wic task not added as IMAGE_BASENAME is not set.")
-}
+# Append the steps to do_image_wic
+do_image_wic[postfuncs] += " do_create_ota_image_wic;"
+

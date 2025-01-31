@@ -6,7 +6,7 @@ WKS_FILE ?= "sdimage-raspberrypi.wks"
 
 # Support for RPI RDK OTA Image
 IMAGE_FSTYPES += " wic"
-include conf/machine/include/rpi-ota-image.inc
+require conf/machine/include/rpi-ota-image.inc
 
 # Source: RPI Default Settings, for FS Creation.
 IMAGE_CLASSES += "sdcard_image-rpi"

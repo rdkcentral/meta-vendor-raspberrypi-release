@@ -96,5 +96,5 @@ python do_create_ota_image_wic() {
 }
 
 # Append the steps to do_image_wic
-do_image_wic[postfuncs] += " do_create_ota_image_wic;"
+do_image_wic[postfuncs] += " do_create_ota_image_wic"
 

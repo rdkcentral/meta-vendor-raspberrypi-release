@@ -1,13 +1,13 @@
 # The RDK OTA image for RPi - creation logic
 #
-# The function do_create_ota_image_wic requires uncompressed 'wic' image created matching IMAGE_BASENAME.
+# The function create_rdkv_ota_wic_image requires uncompressed 'wic' image created matching IMAGE_BASENAME.
 # It copies ${DEPLOY_DIR_IMAGE}/${IMAGE_BASENAME}*.wic as ${OTA_IMAGE_NAME} and
 # deletes the PARTITIONS 3 & 4 which are added by 'wic/sdimage-raspberrypi.wks' as /root2 and /persist.
 # Then it truncates ${OTA_IMAGE_NAME} to save space by adding only /boot and /root1 in the OTA package.
 
 OTA_IMAGE_NAME ?= "${IMAGE_NAME}-ota.wic"
 
-python do_create_ota_image_wic() {
+python create_rdkv_ota_wic_image() {
     import os
     import subprocess
     import tarfile
@@ -33,7 +33,6 @@ python do_create_ota_image_wic() {
     # Find the generated WIC image
     wic_image = None
     for file in os.listdir(deploy_dir_image):
-        note("Checking file: {}".format(file))
         if file.startswith(image_basename) and file.endswith('.wic'):
             wic_image = os.path.join(deploy_dir_image, file)
             break
@@ -95,5 +94,5 @@ python do_create_ota_image_wic() {
     note("Removed intermediate OTA WIC file to save space: {}".format(ota_wic_image))
 }
 
-addtask do_create_ota_image_wic after do_image_complete do_rootfs before do_build
+addtask create_rdkv_ota_wic_image after do_image_complete do_rootfs before do_build
 

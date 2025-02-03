@@ -14,15 +14,15 @@ python do_create_ota_image_wic() {
     from bb import note, error, fatal
 
     deploy_dir_image = d.getVar('DEPLOY_DIR_IMAGE')
-    image_basename = d.getVar('IMAGE_LINK_NAME')
+    image_basename = d.getVar('IMAGE_NAME')
 
     note("DEPLOY_DIR_IMAGE: {}".format(deploy_dir_image))
-    note("IMAGE_LINK_NAME: {}".format(image_basename))
+    note("IMAGE_NAME: {}".format(image_basename))
 
     if not deploy_dir_image:
         fatal("DEPLOY_DIR_IMAGE is not set or is empty.")
     if not image_basename:
-        fatal("IMAGE_LINK_NAME is not set or is empty.")
+        fatal("IMAGE_NAME is not set or is empty.")
 
     ota_image_name = d.getVar('OTA_IMAGE_NAME')
     ota_tar_gz_name = ota_image_name + ".tar.gz"
@@ -35,7 +35,7 @@ python do_create_ota_image_wic() {
     for file in os.listdir(deploy_dir_image):
         note("Checking file: {}".format(file))
         if file.startswith(image_basename) and file.endswith('.wic'):
-            wic_image = os.path.realpath(os.path.join(deploy_dir_image, file))
+            wic_image = os.path.join(deploy_dir_image, file)
             break
 
     if not wic_image:

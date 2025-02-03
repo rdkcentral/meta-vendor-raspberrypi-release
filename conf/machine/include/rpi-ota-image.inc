@@ -95,6 +95,5 @@ python do_create_ota_image_wic() {
     note("Removed intermediate OTA WIC file to save space: {}".format(ota_wic_image))
 }
 
-# Append the steps to do_image_wic
-do_image_wic[postfuncs] += " do_create_ota_image_wic"
+addtask do_create_ota_image_wic after do_image_complete do_rootfs before do_build
 

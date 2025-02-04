@@ -4,12 +4,12 @@ include conf/machine/include/soc-family.inc
 IMAGE_FSTYPES ?= "tar.bz2 ext3 wic.bz2 wic.bmap"
 WKS_FILE ?= "sdimage-raspberrypi.wks"
 
-# Support for RPI RDK OTA Image
-IMAGE_FSTYPES += " wic"
-include conf/machine/include/rpi-ota-image.inc
-
 # Source: RPI Default Settings, for FS Creation.
 IMAGE_CLASSES += "sdcard_image-rpi"
+
+# Support for RPI RDK OTA Image
+IMAGE_FSTYPES:append = " wic"
+IMAGE_CLASSES:append = " rpi-rdkv-ota-wic"
 
 XSERVER = " \
     xserver-xorg \

@@ -152,7 +152,6 @@ do_image_wic[depends] += " \
     "
 
 do_image_wic[recrdeps] = "do_build"
-do_image_wic[depends] += "do_image_rpi_sdimg"
 do_image_wic[after] += "do_image_rpi_sdimg"
 
 # The kernel image is installed into the FAT32 boot partition and does not need

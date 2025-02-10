@@ -95,5 +95,3 @@ python do_create_rdkv_ota_wic_image() {
 
 addtask do_create_rdkv_ota_wic_image after do_image_complete do_rootfs before do_build
 
-# Temporary: fix wget error 8 from opkg-update. Remove when consuming meta-stack-layering-support v1.1.0
-do_rootfs[network] = "1"

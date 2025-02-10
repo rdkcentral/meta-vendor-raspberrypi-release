@@ -1,25 +1,34 @@
 # The RDK OTA image for RPi - creation logic
 #
-# The function do_create_ota_image_wic requires uncompressed 'wic' image created matching IMAGE_BASENAME.
+# The function do_create_rdkv_ota_wic_image requires uncompressed 'wic' image created matching IMAGE_BASENAME.
 # It copies ${DEPLOY_DIR_IMAGE}/${IMAGE_BASENAME}*.wic as ${OTA_IMAGE_NAME} and
 # deletes the PARTITIONS 3 & 4 which are added by 'wic/sdimage-raspberrypi.wks' as /root2 and /persist.
 # Then it truncates ${OTA_IMAGE_NAME} to save space by adding only /boot and /root1 in the OTA package.
 
 OTA_IMAGE_NAME ?= "${IMAGE_NAME}-ota.wic"
 
-python do_create_ota_image_wic() {
+python do_create_rdkv_ota_wic_image() {
     import os
     import subprocess
     import tarfile
-    from bb import note, error
+    from bb import note, error, fatal
 
     deploy_dir_image = d.getVar('DEPLOY_DIR_IMAGE')
     image_basename = d.getVar('IMAGE_NAME')
+
+    note("DEPLOY_DIR_IMAGE: {}".format(deploy_dir_image))
+    note("IMAGE_NAME: {}".format(image_basename))
+
+    if not deploy_dir_image:
+        fatal("DEPLOY_DIR_IMAGE is not set or is empty.")
     if not image_basename:
-        bb.fatal("IMAGE_NAME is not set or is empty.")
+        fatal("IMAGE_NAME is not set or is empty.")
 
     ota_image_name = d.getVar('OTA_IMAGE_NAME')
     ota_tar_gz_name = ota_image_name + ".tar.gz"
+
+    note("OTA_IMAGE_NAME: {}".format(ota_image_name))
+    note("OTA_TAR_GZ_NAME: {}".format(ota_tar_gz_name))
 
     # Find the generated WIC image
     wic_image = None
@@ -29,8 +38,7 @@ python do_create_ota_image_wic() {
             break
 
     if not wic_image:
-        error("Not able to find {}-*.wic for OTA image creation.".format(image_basename))
-        return 1
+        fatal("Not able to find {}*.wic for OTA image creation.".format(image_basename))
 
     # Create a copy of the uncompressed WIC image
     ota_wic_image = os.path.join(deploy_dir_image, ota_image_name)
@@ -85,12 +93,5 @@ python do_create_ota_image_wic() {
     note("Removed intermediate OTA WIC file to save space: {}".format(ota_wic_image))
 }
 
-# Add the task only for image recipes
-python () {
-    if d.getVar('IMAGE_BASENAME'):
-        d.appendVarFlag('do_create_ota_image_wic', 'depends', 'do_image_wic')
-        d.appendVarFlag('do_create_ota_image_wic', 'after', 'do_image_wic')
-        d.appendVarFlag('do_create_ota_image_wic', 'before', 'do_populate_lic_deploy do_build')
-    else:
-        bb.note("do_create_ota_image_wic task not added as IMAGE_BASENAME is not set.")
-}
+addtask do_create_rdkv_ota_wic_image after do_image_complete do_rootfs before do_build
+

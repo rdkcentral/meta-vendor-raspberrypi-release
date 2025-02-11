@@ -4,12 +4,12 @@ include conf/machine/include/soc-family.inc
 IMAGE_FSTYPES ?= "tar.bz2 ext3 wic.bz2 wic.bmap"
 WKS_FILE ?= "sdimage-raspberrypi.wks"
 
-# Support for RPI RDK OTA Image
-IMAGE_FSTYPES += " wic"
-include conf/machine/include/rpi-ota-image.inc
-
 # Source: RPI Default Settings, for FS Creation.
-IMAGE_CLASSES += "sdcard_image-rpi"
+IMAGE_CLASSES:append = " sdcard_image-rpi"
+
+# Support for RPI RDK OTA Image
+IMAGE_FSTYPES:append = " wic"
+IMAGE_CLASSES:append = " rpi-rdkv-ota-wic"
 
 XSERVER = " \
     xserver-xorg \
@@ -96,15 +96,15 @@ KERNEL_IMAGETYPE_DIRECT ??= "zImage"
 KERNEL_IMAGETYPE ?= "${@bb.utils.contains('RPI_USE_U_BOOT', '1', \
         '${KERNEL_IMAGETYPE_UBOOT}', '${KERNEL_IMAGETYPE_DIRECT}', d)}"
 
-MACHINE_FEATURES += "apm usbhost keyboard vfat ext2 screen touchscreen alsa bluetooth wifi sdio ${@bb.utils.contains('DISABLE_VC4GRAPHICS', '1', '', 'vc4graphics', d)}"
+MACHINE_FEATURES:append = " apm usbhost keyboard vfat ext2 screen touchscreen alsa bluetooth wifi sdio ${@bb.utils.contains('DISABLE_VC4GRAPHICS', '1', '', 'vc4graphics', d)}"
 
 # Raspberry Pi has no hardware clock
 MACHINE_FEATURES_BACKFILL_CONSIDERED = "rtc"
 
-MACHINE_EXTRA_RRECOMMENDS += "kernel-modules udev-rules-rpi"
-MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS += "${@oe.utils.conditional('ENABLE_I2C', '1', 'kernel-module-i2c-dev kernel-module-i2c-bcm2708', '', d)}"
-MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS += "${@oe.utils.conditional('ENABLE_IR', '1', 'kernel-module-gpio-ir kernel-module-gpio-ir-tx', '', d)}"
-MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS += "${@oe.utils.conditional('ENABLE_GPIO_SHUTDOWN', '1', 'gpio-shutdown kernel-module-gpio-keys', '', d)}"
+MACHINE_EXTRA_RRECOMMENDS:append = " kernel-modules udev-rules-rpi"
+MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS:append = " ${@oe.utils.conditional('ENABLE_I2C', '1', 'kernel-module-i2c-dev kernel-module-i2c-bcm2708', '', d)}"
+MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS:append = " ${@oe.utils.conditional('ENABLE_IR', '1', 'kernel-module-gpio-ir kernel-module-gpio-ir-tx', '', d)}"
+MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS:append = " ${@oe.utils.conditional('ENABLE_GPIO_SHUTDOWN', '1', 'gpio-shutdown kernel-module-gpio-keys', '', d)}"
 
 SERIAL_CONSOLES_CHECK ??= "${SERIAL_CONSOLES}"
 

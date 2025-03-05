@@ -5,7 +5,7 @@ VENDOR_LAYER_VERSION = "4.1.1"
 
 VENDOR_LAYER_EXTENSION = "${MACHINE}-vendor"
 #VENDOR_IPK_SERVER_PATH = "${RDK_ARTIFACTS_BASE_URL}/opkg/${MACHINE}/ipks/${VENDOR_LAYER_EXTENSION}/"
-VENDOR_IPK_SERVER_PATH = "https://partners.artifactory.comcast.com/artifactory/opkg/raspberrypi4-64-rdke/ipks/raspberrypi4-64-rdke-vendor/test-westeros"
+VENDOR_IPK_SERVER_PATH = "https://partners.artifactory.comcast.com/artifactory/opkg/raspberrypi4-64-rdke/ipks/raspberrypi4-64-rdke-vendor/kirkstione-bootfiles-locked"
 
 PACKAGE_EXTRA_ARCHS:append = " ${VENDOR_LAYER_EXTENSION}"
 

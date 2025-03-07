@@ -1,3 +1,5 @@
+# The current EGL implementation used on the Raspberry Pi does not support the EGL pixel buffer surfaces that are required by the Cobalt implementation. This patch works around this issue by removing some checks from the Cobalt code.
+
 Index: git/cobalt/renderer/backend/egl/graphics_context.cc
 ===================================================================
 --- git.orig/cobalt/renderer/backend/egl/graphics_context.cc

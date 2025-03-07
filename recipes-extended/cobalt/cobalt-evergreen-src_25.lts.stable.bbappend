@@ -1,4 +1,4 @@
-# RPi specifc change
+# RPi specific change
 FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 
 # Workaround for REFPLTV-2693

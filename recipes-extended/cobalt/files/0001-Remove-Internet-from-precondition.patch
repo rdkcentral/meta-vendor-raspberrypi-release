@@ -1,0 +1,21 @@
+From a410896d60d30d32e4289b4acc74a2a382c2754d Mon Sep 17 00:00:00 2001
+From: Ansu Mathew <ansu.mathew@rdkcentral.com>
+Date: Wed, 19 Feb 2025 09:31:54 +0000
+Subject: [PATCH] Remove Internet from precondition
+
+---
+ plugin/Cobalt.conf.in | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/plugin/Cobalt.conf.in b/plugin/Cobalt.conf.in
+index e8a1690..d98f27e 100644
+--- a/plugin/Cobalt.conf.in
++++ b/plugin/Cobalt.conf.in
+@@ -1,4 +1,4 @@
+-precondition = ["Platform","Graphics","Internet"]
++precondition = ["Platform","Graphics"]
+ autostart = "@PLUGIN_COBALT_AUTOSTART@"
+ 
+ if ("@PLUGIN_COBALT_PERSISTENTPATHPOSTFIX@"):
+-- 
+2.25.1

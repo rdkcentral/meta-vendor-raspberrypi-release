@@ -21,3 +21,14 @@ update_dropbearkey_to_rw_path() {
     fi
 }
 ROOTFS_POSTPROCESS_COMMAND += "update_dropbearkey_to_rw_path; "
+
+# RDKVREFPLT-5430: dsmgr requires wpeframework-rdkshell; remove the cyclic dependency.
+update_wpeframework_rdkshell_service() {
+    SERVICE_FILE="${IMAGE_ROOTFS}/lib/systemd/system/wpeframework-rdkshell.service"
+    if [ -f "$SERVICE_FILE" ]; then
+        sed -i '/^Requires=.*dsmgr.service/ s/dsmgr.service//' "$SERVICE_FILE"
+        sed -i '/^After=.*dsmgr.service/ s/dsmgr.service//' "$SERVICE_FILE"
+        echo "Removed dsmgr.service from ${SERVICE_FILE}..."
+    fi
+}
+ROOTFS_POSTPROCESS_COMMAND += "update_wpeframework_rdkshell_service; "

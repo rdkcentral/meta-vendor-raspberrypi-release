@@ -1,7 +1,7 @@
 # Fix the build error; related to: https://github.com/rdk-e/meta-image-support/pull/136
 PROJECT_BRANCH ?= "${RDKE_GITHUB_BRANCH}"
 
-VENDOR_LAYER_VERSION = "4.4.3"
+VENDOR_LAYER_VERSION = "4.4.4"
 
 VENDOR_LAYER_EXTENSION = "${MACHINE}-vendor"
 VENDOR_IPK_SERVER_PATH = "${RDK_ARTIFACTS_BASE_URL}/opkg/${MACHINE}/ipks/${VENDOR_LAYER_EXTENSION}/${VENDOR_LAYER_VERSION}"
@@ -21,3 +21,21 @@ update_dropbearkey_to_rw_path() {
     fi
 }
 ROOTFS_POSTPROCESS_COMMAND += "update_dropbearkey_to_rw_path; "
+
+# RDKVREFPLT-5430: dsmgr requires wpeframework-rdkshell; remove the cyclic dependency.
+update_wpeframework_rdkshell_service() {
+    THUNDER_RDKSHELL_SERVICE_FILE="${IMAGE_ROOTFS}/lib/systemd/system/wpeframework-rdkshell.service"
+    DSMGR_SERVICE_FILE="${IMAGE_ROOTFS}/lib/systemd/system/dsmgr.service"
+
+    if [ -f "$THUNDER_RDKSHELL_SERVICE_FILE" ] && [ -f "$DSMGR_SERVICE_FILE" ]; then
+        # Remove dsmgr.service from wpeframework-rdkshell.service
+        sed -i '/^Requires=.*dsmgr.service/ s/dsmgr.service//' "$THUNDER_RDKSHELL_SERVICE_FILE"
+        sed -i '/^After=.*dsmgr.service/ s/dsmgr.service//' "$THUNDER_RDKSHELL_SERVICE_FILE"
+        echo "Removed dsmgr.service from ${THUNDER_RDKSHELL_SERVICE_FILE}..."
+
+        # Remove wpeframework-rdkshell.service from dsmgr.service
+        sed -i '/^Requires=.*wpeframework-rdkshell.service/ s/wpeframework-rdkshell.service//' "$DSMGR_SERVICE_FILE"
+        sed -i '/^After=.*wpeframework-rdkshell.service/ s/wpeframework-rdkshell.service//' "$DSMGR_SERVICE_FILE"
+        echo "Removed wpeframework-rdkshell.service from ${DSMGR_SERVICE_FILE}..."
+    fi
+}

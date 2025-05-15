@@ -39,4 +39,3 @@ update_wpeframework_rdkshell_service() {
         echo "Removed wpeframework-rdkshell.service from ${DSMGR_SERVICE_FILE}..."
     fi
 }
-ROOTFS_POSTPROCESS_COMMAND += "update_wpeframework_rdkshell_service; "

@@ -1,4 +1,3 @@
-# Fix the build error; related to: https://github.com/rdk-e/meta-image-support/pull/136
 PROJECT_BRANCH ?= "${RDKE_GITHUB_BRANCH}"
 
 VENDOR_LAYER_VERSION = "4.4.4"

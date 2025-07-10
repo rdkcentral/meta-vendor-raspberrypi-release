@@ -2,9 +2,9 @@
 
 | Package Name | Package Version |
 |--------------|-----------------|
-| lib32-packagegroup-hal-raspberrypi4 | 1.0.0-r0 |
+| lib32-packagegroup-hal-raspberrypi4 | 1.0.1-r0 |
 | lib32-packagegroup-kernel-modules-raspberrypi4 | 5.15.92-r0 |
-| lib32-packagegroup-vendor-layer | 4.5.0-r0 |
+| lib32-packagegroup-vendor-layer | 4.5.1-r0 |
 | kernel | 5.15.92-r0 |
 | kernel-5.15.92-v8 | 5.15.92-r0 |
 | kernel-image-5.15.92-v8 | 5.15.92-r0 |
@@ -2126,6 +2126,7 @@
 | lib32-linux-firmware-rpidistro-broadcom-license | 1.0.0-r0 |
 | lib32-mesa-megadriver | 22.0.3-r0 |
 | lib32-mfrlibs-hal-raspberrypi4 | 1.1.0-r0 |
+| lib32-miracast-hal-raspberrypi4 | 1.0.1-r0 |
 | lib32-mpg123 | 1.29.3-r0 |
 | lib32-mpg123-doc | 1.29.3-r0 |
 | lib32-pango | 1.44.7-r0 |

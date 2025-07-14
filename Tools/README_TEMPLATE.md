@@ -23,7 +23,7 @@ This project is distributed under the terms outlined in the associated [License]
 1. Generate and replace `VendorPackagesAndVersions.md` from vendor stack for the `<RELEASE_VERSION>`. See [variables.md](https://github.com/rdkcentral/meta-stack-layering-support/blob/main/docs/variables.md) for details on how to generate it.
 2. Run `Tools/update_readme.py` script from base directory to generate the final README. Note: change to match Host's shell conventions and filesystem path syntax(Windows/Linux/Mac).
 ```sh
-# Requires Python 2.7+ or Python 3.x
+# Requires Python 3.x
 # Setup requirements (one time): pip install requests
 Usage: python ./Tools/update_readme.py ./Tools/README_TEMPLATE.md ./README.md <MANIFEST_NAME> <RELEASE_VERSION>
 ```

@@ -40,7 +40,7 @@ def parse_manifest(xml_text):
 def main():
     if len(sys.argv) != 5:
         print("Setup requirements (one time): pip install requests")
-        print("Usage: python Tools/update_readme.py Tools/README_TEMPLATE.md README.md <MANIFEST_NAME> <RELEASE_VERSION>")
+        print("Usage: python3 Tools/update_readme.py Tools/README_TEMPLATE.md README.md <MANIFEST_NAME> <RELEASE_VERSION>")
         sys.exit(1)
 
     template_file = sys.argv[1]

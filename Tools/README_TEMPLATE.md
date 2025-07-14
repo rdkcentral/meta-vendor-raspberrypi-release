@@ -25,13 +25,13 @@ This project is distributed under the terms outlined in the associated [License]
 ```sh
 # Requires Python 3.x
 # Setup requirements (one time): pip install requests
-Usage: python ./Tools/update_readme.py ./Tools/README_TEMPLATE.md ./README.md <MANIFEST_NAME> <RELEASE_VERSION>
+Usage: python3 ./Tools/update_readme.py ./Tools/README_TEMPLATE.md ./README.md <MANIFEST_NAME> <RELEASE_VERSION>
 ```
 - Replace the arguments with the actual release/tag/commit values matching the release.
 
 Eg (Linux Host):
 ```sh
-python ./Tools/update_readme.py ./Tools/README_TEMPLATE.md ./README.md rdke-raspberrypi.xml 4.5.1
+python3 ./Tools/update_readme.py ./Tools/README_TEMPLATE.md ./README.md rdke-raspberrypi.xml 4.5.1
 ```
 
 ---

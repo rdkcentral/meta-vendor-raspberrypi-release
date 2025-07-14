@@ -3,7 +3,7 @@
 RaspberryPi RDKE Vendor Release aligning to below detailed baseline.
 
 ### Vendor Release Details
-The [Packages And Versions](VendorPackagesAndVersions.md) file provides a table listing vendor-supplied package names and their versions of [Vendor Release <RELEASE_VERSION>](https://github.com/rdkcentral/vendor-manifest-raspberrypi/releases/tag/<RELEASE_VERSION>).
+The [Packages And Versions](VendorPackagesAndVersions.md) file provides a table listing vendor-supplied package names and their versions of [Vendor Release <RELEASE_VERSION>](https://github.com/rdkcentral/vendor-manifest-raspberrypi/releases/tag/<RELEASE_VERSION>) which aligns with below layer combination.
 
 For a comprehensive list of changes, updates, and release history, refer to the [Changelog](CHANGELOG.md).
 

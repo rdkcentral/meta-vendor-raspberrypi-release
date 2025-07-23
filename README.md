@@ -1,17 +1,17 @@
 
-# RDKE Vendor Layer Release Note
+# RDKE Vendor Layer 4.5.1 Release Note
 
-| Summary       | Content              |
-|---------------|----------------------|
-| Manifest URL  | https://github.com/rdkcentral/vendor-manifest-raspberrypi           |
-| Release Tag   | 4.5.1    |
-| Yocto Version | kirkstone      |
-| Date          | 2025-07-23 03:40:10 UTC           |
-| Author        | support@rdkcentral.com             |
+| Summary       | Content |
+|---------------|---------|
+| Manifest URL  | https://github.com/rdkcentral/vendor-manifest-raspberrypi |
+| Release Tag   | [4.5.1](https://github.com/rdkcentral/vendor-manifest-raspberrypi/releases/tag/4.5.1) |
+| Yocto Version | kirkstone |
+| Date          | 2025-07-23 03:55:32 UTC |
+| Author        | support@rdkcentral.com |
 
 
 ### Vendor Release Details
-The [Packages And Versions](VendorPackagesAndVersions.md) file provides a table listing Vendor-supplied package names and their versions of [Vendor Release 4.5.1](https://github.com/rdkcentral/vendor-manifest-raspberrypi/releases/tag/4.5.1) which aligns with below combination.
+The [Packages And Versions](VendorPackagesAndVersions.md) file provides a table listing Vendor-supplied package names and their versions of [Vendor Release 4.5.1](https://github.com/rdkcentral/vendor-manifest-raspberrypi/releases/tag/4.5.1) which aligns with below layer combination.
 
 For a comprehensive list of changes, updates, and release history, refer to the [Changelog](CHANGELOG.md).
 
@@ -44,7 +44,7 @@ This project is distributed under the terms outlined in the associated [License]
 
 #### How to update this README automatically
 
-1. Generate `PackagesAndVersions.md` for the target `PACKAGE_ARCH` by building the Vendor stack for `4.5.1` with `DEPLOY_IPK_FEED = "1"` and `GENERATE_IPK_VERSION_DOC = "1"` in `${BUILDDIR}/conf/local.conf`. The file will be in `${BUILDDIR}/tmp/deploy/ipk/${PACKAGE_ARCH}/`. See [variables.md](https://github.com/rdkcentral/meta-stack-layering-support/blob/3.0.0/docs/variables.md) for details.
+1. Generate `PackagesAndVersions.md` for the target `PACKAGE_ARCH` by building the Vendor stack for `4.5.1` with `DEPLOY_IPK_FEED = "1"` and `GENERATE_IPK_VERSION_DOC = "1"` in `${BUILDDIR}/conf/local.conf`. The generated file will be in `${BUILDDIR}/tmp/deploy/ipk/${PACKAGE_ARCH}/`. See [variables.md](https://github.com/rdkcentral/meta-stack-layering-support/blob/3.0.0/docs/variables.md) for supported options.
 2. Run `Tools/update_readme.py` script from base directory to generate the final README. Note: change to match Host's shell conventions and filesystem path syntax(Windows/Linux/Mac).
 ```sh
 # Requires Python 3.x

@@ -1,17 +1,17 @@
 
-# RDKE <RDKE_LAYER> Layer Release Note
+# RDKE <RDKE_LAYER> Layer <RELEASE_VERSION> Release Note
 
-| Summary       | Content              |
-|---------------|----------------------|
-| Manifest URL  | <BASE_URL>           |
-| Release Tag   | <RELEASE_VERSION>    |
-| Yocto Version | <YOCTO_VERSION>      |
-| Date          | <GEN_DATE>           |
-| Author        | <AUTHOR>             |
+| Summary       | Content |
+|---------------|---------|
+| Manifest URL  | <BASE_URL> |
+| Release Tag   | [<RELEASE_VERSION>](<BASE_URL>/releases/tag/<RELEASE_VERSION>) |
+| Yocto Version | <YOCTO_VERSION> |
+| Date          | <GEN_DATE> |
+| Author        | <AUTHOR> |
 
 
 ### <RDKE_LAYER> Release Details
-The [Packages And Versions](VendorPackagesAndVersions.md) file provides a table listing <RDKE_LAYER>-supplied package names and their versions of [<RDKE_LAYER> Release <RELEASE_VERSION>](<BASE_URL>/releases/tag/<RELEASE_VERSION>) which aligns with below combination.
+The [Packages And Versions](VendorPackagesAndVersions.md) file provides a table listing <RDKE_LAYER>-supplied package names and their versions of [<RDKE_LAYER> Release <RELEASE_VERSION>](<BASE_URL>/releases/tag/<RELEASE_VERSION>) which aligns with below layer combination.
 
 For a comprehensive list of changes, updates, and release history, refer to the [Changelog](CHANGELOG.md).
 
@@ -30,7 +30,7 @@ This project is distributed under the terms outlined in the associated [License]
 
 #### How to update this README automatically
 
-1. Generate `PackagesAndVersions.md` for the target `PACKAGE_ARCH` by building the <RDKE_LAYER> stack for `<RELEASE_VERSION>` with `DEPLOY_IPK_FEED = "1"` and `GENERATE_IPK_VERSION_DOC = "1"` in `${BUILDDIR}/conf/local.conf`. The file will be in `${BUILDDIR}/tmp/deploy/ipk/${PACKAGE_ARCH}/`. See [variables.md](https://github.com/rdkcentral/meta-stack-layering-support/blob/<STACKLAYERING_VERSION>/docs/variables.md) for details.
+1. Generate `PackagesAndVersions.md` for the target `PACKAGE_ARCH` by building the <RDKE_LAYER> stack for `<RELEASE_VERSION>` with `DEPLOY_IPK_FEED = "1"` and `GENERATE_IPK_VERSION_DOC = "1"` in `${BUILDDIR}/conf/local.conf`. The generated file will be in `${BUILDDIR}/tmp/deploy/ipk/${PACKAGE_ARCH}/`. See [variables.md](https://github.com/rdkcentral/meta-stack-layering-support/blob/<STACKLAYERING_VERSION>/docs/variables.md) for supported options.
 2. Run `Tools/update_readme.py` script from base directory to generate the final README. Note: change to match Host's shell conventions and filesystem path syntax(Windows/Linux/Mac).
 ```sh
 # Requires Python 3.x

@@ -6,7 +6,7 @@
 | Manifest URL  | https://github.com/rdkcentral/vendor-manifest-raspberrypi |
 | Release Tag   | [4.5.1](https://github.com/rdkcentral/vendor-manifest-raspberrypi/releases/tag/4.5.1) |
 | Yocto Version | kirkstone |
-| Date          | 2025-07-23 03:55:32 UTC |
+| Date          | 2025-07-23 04:01:34 UTC |
 | Author        | support@rdkcentral.com |
 
 
@@ -49,13 +49,13 @@ This project is distributed under the terms outlined in the associated [License]
 ```sh
 # Requires Python 3.x
 # Setup requirements (one time): pip install requests
-Usage: python3 ./Tools/update_readme.py ./Tools/README_TEMPLATE.md ./README.md <MANIFEST_NAME> 4.5.1 Vendor "AUTHOR,EMAIL" "<Optional Test report url>"
+Usage: python3 ./Tools/update_readme.py ./Tools/README_TEMPLATE.md ./README.md <MANIFEST_REPO_BASE_URL> <MANIFEST_NAME> 4.5.1 Vendor "AUTHOR,email" "[TestReportUrl(optional)]"
 ```
 - Replace the arguments with the actual release/tag/commit values matching the release.
 
 Eg (Linux Host):
 ```sh
-python3 ./Tools/update_readme.py ./Tools/README_TEMPLATE.md ./README.md rdke-raspberrypi.xml 4.5.1 Vendor "ReleaseTeam, email_id" "https://example.com/test-report"
+python3 ./Tools/update_readme.py ./Tools/README_TEMPLATE.md ./README.md https://github.com/rdkcentral/vendor-manifest-raspberrypi rdke-raspberrypi.xml 4.5.1 Vendor "ReleaseTeam, email_id" "https://example.com/test-report"
 ```
 
 ---

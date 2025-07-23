@@ -35,13 +35,13 @@ This project is distributed under the terms outlined in the associated [License]
 ```sh
 # Requires Python 3.x
 # Setup requirements (one time): pip install requests
-Usage: python3 ./Tools/update_readme.py ./Tools/README_TEMPLATE.md ./README.md <MANIFEST_NAME> <RELEASE_VERSION> <RDKE_LAYER> "AUTHOR,EMAIL" "<Optional Test report url>"
+Usage: python3 ./Tools/update_readme.py ./Tools/README_TEMPLATE.md ./README.md <MANIFEST_REPO_BASE_URL> <MANIFEST_NAME> <RELEASE_VERSION> <RDKE_LAYER> "AUTHOR,email" "[TestReportUrl(optional)]"
 ```
 - Replace the arguments with the actual release/tag/commit values matching the release.
 
 Eg (Linux Host):
 ```sh
-python3 ./Tools/update_readme.py ./Tools/README_TEMPLATE.md ./README.md rdke-raspberrypi.xml 4.5.1 Vendor "ReleaseTeam, email_id" "https://example.com/test-report"
+python3 ./Tools/update_readme.py ./Tools/README_TEMPLATE.md ./README.md https://github.com/rdkcentral/vendor-manifest-raspberrypi rdke-raspberrypi.xml 4.5.1 Vendor "ReleaseTeam, email_id" "https://example.com/test-report"
 ```
 
 ---

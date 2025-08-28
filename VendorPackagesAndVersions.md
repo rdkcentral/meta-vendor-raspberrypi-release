@@ -4,7 +4,7 @@
 |--------------|-----------------|
 | lib32-packagegroup-hal-raspberrypi4 | 1.0.1-r0 |
 | lib32-packagegroup-kernel-modules-raspberrypi4 | 5.15.92-r0 |
-| lib32-packagegroup-vendor-layer | 4.5.1-r0 |
+| lib32-packagegroup-vendor-layer | 4.5.2-r0 |
 | kernel | 5.15.92-r0 |
 | kernel-5.15.92-v8 | 5.15.92-r0 |
 | kernel-image-5.15.92-v8 | 5.15.92-r0 |
@@ -2259,7 +2259,7 @@
 | lib32-pulseaudio-module-volume-restore | 15.0-r0 |
 | lib32-pulseaudio-pa-info | 15.0-r0 |
 | lib32-pulseaudio-server | 15.0-r0 |
-| lib32-rdk-gstreamer-utils-platform | 1.0.1-r0 |
+| lib32-rdk-gstreamer-utils-platform | 1.1.0-r0 |
 | lib32-rsvg | 2.40.21-r0 |
 | lib32-secapi2-adapter-rpi | 1.0-r0 |
 | lib32-sysint-soc | 1.1.6-r0 |

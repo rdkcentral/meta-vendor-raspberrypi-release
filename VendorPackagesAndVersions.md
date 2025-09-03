@@ -4,7 +4,7 @@
 |--------------|-----------------|
 | lib32-packagegroup-hal-raspberrypi4 | 1.0.1-r0 |
 | lib32-packagegroup-kernel-modules-raspberrypi4 | 5.15.92-r0 |
-| lib32-packagegroup-vendor-layer | 4.5.2-r0 |
+| lib32-packagegroup-vendor-layer | 4.6.0-r0 |
 | kernel | 5.15.92-r0 |
 | kernel-5.15.92-v8 | 5.15.92-r0 |
 | kernel-image-5.15.92-v8 | 5.15.92-r0 |
@@ -2116,7 +2116,8 @@
 | lib32-librsvg-2-doc | 2.40.21-r0 |
 | lib32-librsvg-2-gtk | 2.40.21-r0 |
 | lib32-libswresample3 | 4.2.2-r2 |
-| lib32-libsystemaudioplatform1 | 1.0.0-r0 |
+| lib32-libsystemaudioplatform1 | 1.0.1-r0 |
+| lib32-libvulkan1 | 1.3.204.1-r0 |
 | lib32-libwayland-egl1 | 1.20.0-r0 |
 | lib32-linux-firmware-rpidistro-bcm43430 | 1.0.0-r0 |
 | lib32-linux-firmware-rpidistro-bcm43436 | 1.0.0-r0 |
@@ -2125,6 +2126,7 @@
 | lib32-linux-firmware-rpidistro-bcm43456 | 1.0.0-r0 |
 | lib32-linux-firmware-rpidistro-broadcom-license | 1.0.0-r0 |
 | lib32-mesa-megadriver | 22.0.3-r0 |
+| lib32-mesa-vulkan-drivers | 22.0.3-r0 |
 | lib32-mfrlibs-hal-raspberrypi4 | 1.1.0-r0 |
 | lib32-miracast-hal-raspberrypi4 | 1.0.1-r0 |
 | lib32-mpg123 | 1.29.3-r0 |
@@ -2266,6 +2268,7 @@
 | lib32-udev-rules-rpi | 1.0-r0 |
 | lib32-userland | 20220323-r0 |
 | lib32-userland-doc | 20220323-r0 |
+| lib32-vulkan-tools | 1.3.204-r0 |
 | lib32-westeros | 1.1.58-r0 |
 | lib32-westeros-simplebuffer | 1.1.58-r0 |
 | lib32-westeros-simpleshell | 1.1.58-r0 |

@@ -4,9 +4,10 @@
 |--------------|-----------------|
 | lib32-packagegroup-hal-raspberrypi4 | 1.0.1-r0 |
 | lib32-packagegroup-kernel-modules-raspberrypi4 | 5.15.92-r0 |
-| lib32-packagegroup-vendor-layer | 4.6.0-r0 |
+| lib32-packagegroup-vendor-layer | 4.7.0-r0 |
 | kernel | 5.15.92-r0 |
 | kernel-5.15.92-v8 | 5.15.92-r0 |
+| kernel-devicetree | 5.15.92-r0 |
 | kernel-image-5.15.92-v8 | 5.15.92-r0 |
 | kernel-image-image-5.15.92-v8 | 5.15.92-r0 |
 | kernel-module-6lowpan-5.15.92-v8 | 5.15.92-r0 |
@@ -114,6 +115,7 @@
 | kernel-module-bcm2835-isp-5.15.92-v8 | 5.15.92-r0 |
 | kernel-module-bcm2835-mmal-vchiq-5.15.92-v8 | 5.15.92-r0 |
 | kernel-module-bcm2835-smi-5.15.92-v8 | 5.15.92-r0 |
+| kernel-module-bcm2835-smi-dev-5.15.92-v8 | 5.15.92-r0 |
 | kernel-module-bcm2835-unicam-5.15.92-v8 | 5.15.92-r0 |
 | kernel-module-bcm2835-v4l2-5.15.92-v8 | 5.15.92-r0 |
 | kernel-module-bcm3510-5.15.92-v8 | 5.15.92-r0 |
@@ -151,6 +153,7 @@
 | kernel-module-btusb-5.15.92-v8 | 5.15.92-r0 |
 | kernel-module-can-5.15.92-v8 | 5.15.92-r0 |
 | kernel-module-can-bcm-5.15.92-v8 | 5.15.92-r0 |
+| kernel-module-can-dev-5.15.92-v8 | 5.15.92-r0 |
 | kernel-module-can-gw-5.15.92-v8 | 5.15.92-r0 |
 | kernel-module-can-isotp-5.15.92-v8 | 5.15.92-r0 |
 | kernel-module-can-j1939-5.15.92-v8 | 5.15.92-r0 |
@@ -606,6 +609,7 @@
 | kernel-module-htu21-5.15.92-v8 | 5.15.92-r0 |
 | kernel-module-huawei-cdc-ncm-5.15.92-v8 | 5.15.92-r0 |
 | kernel-module-hx8357d-5.15.92-v8 | 5.15.92-r0 |
+| kernel-module-i2c-dev-5.15.92-v8 | 5.15.92-r0 |
 | kernel-module-i2c-mux-5.15.92-v8 | 5.15.92-r0 |
 | kernel-module-i2c-mux-gpmux-5.15.92-v8 | 5.15.92-r0 |
 | kernel-module-i2c-mux-pca954x-5.15.92-v8 | 5.15.92-r0 |
@@ -1294,6 +1298,7 @@
 | kernel-module-snd-pcm-oss-5.15.92-v8 | 5.15.92-r0 |
 | kernel-module-snd-rawmidi-5.15.92-v8 | 5.15.92-r0 |
 | kernel-module-snd-seq-5.15.92-v8 | 5.15.92-r0 |
+| kernel-module-snd-seq-device-5.15.92-v8 | 5.15.92-r0 |
 | kernel-module-snd-seq-dummy-5.15.92-v8 | 5.15.92-r0 |
 | kernel-module-snd-seq-midi-5.15.92-v8 | 5.15.92-r0 |
 | kernel-module-snd-seq-midi-event-5.15.92-v8 | 5.15.92-r0 |
@@ -1661,6 +1666,7 @@
 | kernel-module-xt-cpu-5.15.92-v8 | 5.15.92-r0 |
 | kernel-module-xt-ct-5.15.92-v8 | 5.15.92-r0 |
 | kernel-module-xt-dccp-5.15.92-v8 | 5.15.92-r0 |
+| kernel-module-xt-devgroup-5.15.92-v8 | 5.15.92-r0 |
 | kernel-module-xt-dscp-5.15.92-v8 | 5.15.92-r0 |
 | kernel-module-xt-ecn-5.15.92-v8 | 5.15.92-r0 |
 | kernel-module-xt-esp-5.15.92-v8 | 5.15.92-r0 |
@@ -1736,9 +1742,10 @@
 | lib32-bluez-firmware-rpidistro-bcm43430a1-hcd | 1.0.0-r0 |
 | lib32-bluez-firmware-rpidistro-bcm4345c0-hcd | 1.0.0-r0 |
 | lib32-bluez-firmware-rpidistro-cypress-license | 1.0.0-r0 |
+| lib32-devicesettings-hal-raspberrypi4 | 1.2.0-r0 |
 | lib32-displayinfo-soc | 1.0.0-r0 |
-| lib32-essos | 1.1.58-r0 |
-| lib32-essos-examples | 1.1.58-r0 |
+| lib32-essos | 1.1.59-r0 |
+| lib32-essos-examples | 1.1.59-r0 |
 | lib32-ffmpeg | 4.2.2-r2 |
 | lib32-gst-drm-plugins-rpi | 1.0-r0 |
 | lib32-gstreamer1.0 | 1.18.5-r0 |
@@ -2204,6 +2211,7 @@
 | lib32-pulseaudio-module-augment-properties | 15.0-r0 |
 | lib32-pulseaudio-module-bluetooth-discover | 15.0-r0 |
 | lib32-pulseaudio-module-bluetooth-policy | 15.0-r0 |
+| lib32-pulseaudio-module-bluez5-device | 15.0-r0 |
 | lib32-pulseaudio-module-bluez5-discover | 15.0-r0 |
 | lib32-pulseaudio-module-card-restore | 15.0-r0 |
 | lib32-pulseaudio-module-cli | 15.0-r0 |
@@ -2213,7 +2221,10 @@
 | lib32-pulseaudio-module-combine-sink | 15.0-r0 |
 | lib32-pulseaudio-module-console-kit | 15.0-r0 |
 | lib32-pulseaudio-module-dbus-protocol | 15.0-r0 |
+| lib32-pulseaudio-module-default-device-restore | 15.0-r0 |
 | lib32-pulseaudio-module-detect | 15.0-r0 |
+| lib32-pulseaudio-module-device-manager | 15.0-r0 |
+| lib32-pulseaudio-module-device-restore | 15.0-r0 |
 | lib32-pulseaudio-module-echo-cancel | 15.0-r0 |
 | lib32-pulseaudio-module-filter-apply | 15.0-r0 |
 | lib32-pulseaudio-module-filter-heuristics | 15.0-r0 |
@@ -2261,7 +2272,7 @@
 | lib32-pulseaudio-module-volume-restore | 15.0-r0 |
 | lib32-pulseaudio-pa-info | 15.0-r0 |
 | lib32-pulseaudio-server | 15.0-r0 |
-| lib32-rdk-gstreamer-utils-platform | 1.1.0-r0 |
+| lib32-rdk-gstreamer-utils-platform | 1.2.0-r0 |
 | lib32-rsvg | 2.40.21-r0 |
 | lib32-secapi2-adapter-rpi | 1.0-r0 |
 | lib32-sysint-soc | 1.1.6-r0 |
@@ -2269,8 +2280,8 @@
 | lib32-userland | 20220323-r0 |
 | lib32-userland-doc | 20220323-r0 |
 | lib32-vulkan-tools | 1.3.204-r0 |
-| lib32-westeros | 1.1.58-r0 |
-| lib32-westeros-simplebuffer | 1.1.58-r0 |
-| lib32-westeros-simpleshell | 1.1.58-r0 |
-| lib32-westeros-sink | 1.1.58-r0 |
-| lib32-westeros-soc-drm | 1.1.58-r0 |
+| lib32-westeros | 1.1.59-r0 |
+| lib32-westeros-simplebuffer | 1.1.59-r0 |
+| lib32-westeros-simpleshell | 1.1.59-r0 |
+| lib32-westeros-sink | 1.1.59-r0 |
+| lib32-westeros-soc-drm | 1.1.59-r0 |

@@ -1,0 +1,419 @@
+,Test,Results
+L1 deepSleepMgr,PLAT_INIT_pos                                                       ,PASS
+,PLAT_INIT_neg                                                       ,FAIL
+,PLAT_TERM_pos                                                       ,PASS
+,PLAT_TERM_neg                                                       ,FAIL
+,PLAT_DeepSleepWakeup_pos                                            ,FAIL
+,PLAT_DeepSleepWakeup_neg                                            ,FAIL
+,PLAT_SetDeepSleep_pos                                              ,FAIL
+,PLAT_SetDeepSleep_neg                                               ,FAIL
+,PLAT_GetLastWakeupReason_pos                                        ,PASS
+,PLAT_GetLastWakeupReason_neg                                     ,FAIL
+,PLAT_GetLastWakeupKeyCode_pos                                      ,PASS
+,PLAT_GetLastWakeupKeyCode_neg,FAIL
+L2 deepSleepMgr,SetDsAndVerifyWakeup1sec                                            ,FAIL
+,SetDsAndVerifyWakeUp10sec,FAIL
+,,
+L1 plat_power,PLAT_INIT_pos                                                     ,PASS
+,PLAT_INIT_neg                                                     ,PASS
+,PLAT_TERM_pos                                                       ,PASS
+,PLAT_TERM_neg                                                       ,PASS
+,PLAT_SetPowerState_pos                                             ,FAIL
+,PLAT_SetPowerState_neg                                              ,PASS
+,PLAT_GetPowerState_pos                                              ,PASS
+,PLAT_GetPowerState_neg                                             ,PASS
+,PLAT_SetWakeupSrc_pos                                              ,PASS
+,PLAT_SetWakeupSrc_neg                                              ,PASS
+,PLAT_GetWakeupSrc_pos                                              ,FAIL
+,PLAT_GetWakeupSrc_neg,PASS
+L2 plat_power,L2_SetAndGetPowerState                                             ,FAIL
+,L2_SetAndGetWakeupSrc,FAIL
+,,
+L1 HDMICEC Source ,getLogicalAddress_Positive                                         ,FAIL
+,getLogicalAddress_negative                                          ,FAIL
+,Tx_Positive                                                         ,FAIL
+,Tx_negative                                                      ,FAIL
+,open_Positive                                                      ,FAIL
+,open_negative                                                      ,FAIL
+,close_Positive                                                     ,FAIL
+,close_negative                                                      ,FAIL
+,getPhysicalAddress_Positive                                         ,FAIL
+,getPhysicalAddress_negative                                         ,FAIL
+,setRxCallback_Positive                                             ,FAIL
+,setRxCallback_negative                                             ,FAIL
+,addLogicalAddress_Positive                                         ,FAIL
+,addLogicalAddress_negative                                         ,FAIL
+,removeLogicalAddress_Positive                                      ,FAIL
+,removeLogicalAddress_negative,FAIL
+L2 HDMICEC Source ,L2_LogicalAddressUnavailability,FAIL
+,,
+L1 dsDisplay,dsDisplayInit_pos                                                   ,PASS
+,dsDisplayInit_neg                                                   ,PASS
+,dsDisplayTerm_pos                                                  ,PASS
+,dsDisplayTerm_neg                                                   ,PASS
+,dsGetDisplay_pos                                                   ,PASS
+,dsGetDisplay_neg                                                   ,PASS
+,dsGetEDID_pos                                                      ,FAIL
+,dsGetEDID_neg                                                      ,PASS
+,dsGetEDIDBytes_pos                                                 ,FAIL
+,dsGetEDIDBytes_neg                                                 ,PASS
+,dsGetDisplayAspectRatio_pos                                        ,PASS
+,dsGetDisplayAspectRatio_neg                                         ,PASS
+,dsRegisterDisplayEventCB_pos                                       ,PASS
+,dsRegisterDisplayEventCB_neg                                    ,PASS
+,dsGetAVIContentType_pos                                          ,FAIL
+,dsGetAVIContentType_neg                                          ,FAIL
+,dsSetAVIContentType_pos                                            ,FAIL
+,dsSetAVIContentType_neg                                        ,FAIL
+,dsGetAVIScanInfo_pos                                            ,FAIL
+,dsGetAVIScanInfo_neg                                               ,FAIL
+,dsSetAVIScanInfo_pos                                               ,PASS
+,dsSetAVIScanInfo_neg                                             ,FAIL
+,dsGetAllmEnabled_pos                                             ,FAIL
+,dsGetAllmEnabled_neg                                               ,FAIL
+,dsSetAllmEnabled_pos                                               ,PASS
+,dsSetAllmEnabled_neg,FAIL
+L2 dsDisplay,TestDefaultAspectRatio_src                                        ,PASS
+,SetAndGetAVIContentType_src,FAIL
+,,
+L1 dsVideoPort,dsVideoPortInit_pos       ,PASS
+,dsVideoPortInit_neg       ,PASS
+,dsVideoPortTerm_pos       ,PASS
+,dsVideoPortTerm_neg       ,PASS
+,dsGetVideoPort_pos        ,PASS
+,dsGetVideoPort_neg        ,PASS
+,dsIsVideoPortEnabled_pos  ,PASS
+,dsIsVideoPortEnabled_neg  ,PASS
+,dsIsDisplayConnected_pos  ,PASS
+,dsIsDisplayConnected_neg  ,PASS
+,dsIsDisplaySurround_pos   ,FAIL
+,dsIsDisplaySurround_neg   ,PASS
+,dsGetSurroundMode_pos     ,FAIL
+,dsGetSurroundMode_neg     ,PASS
+,VideoFormatUpdateRegCB_pos,FAIL
+,VideoFormatUpdateRegCB_neg,PASS
+,dsIsVideoPortActive_pos   ,PASS
+,dsIsVideoPortActive_neg   ,PASS
+,dsEnableHDCP_pos          ,FAIL
+,dsEnableHDCP_neg          ,PASS
+,dsIsHDCPEnabled_pos       ,FAIL
+,dsIsHDCPEnabled_neg       ,PASS
+,dsEnableVideoPort_pos     ,PASS
+,dsEnableVideoPort_neg     ,PASS
+,dsSetResolution_pos       ,PASS
+,dsSetResolution_neg       ,PASS
+,dsGetResolution_pos       ,FAIL
+,dsGetResolution_neg       ,PASS
+,dsRegisterHdcpStatusCB_pos,PASS
+,dsRegisterHdcpStatusCB_neg,PASS
+,dsGetHDCPStatus_pos       ,FAIL
+,dsGetHDCPStatus_neg       ,PASS
+,dsGetHDCPProtocol_pos     ,FAIL
+,dsGetHDCPProtocol_neg     ,PASS
+,GetHDCPReceiverProtocol_pos ,FAIL
+,GetHDCPReceiverProtocol_neg ,PASS
+,GetHDCPCurrentProtocol_pos  ,FAIL
+,GetHDCPCurrentProtocol_neg  ,PASS
+,dsGetTVHDRCapabilities_pos  ,FAIL
+,dsGetTVHDRCapabilities_neg  ,PASS
+,dsSupportedTvResolutions_pos,FAIL
+,dsSupportedTvResolutions_neg,PASS
+,SetForceDisable4KSupport_pos,PASS
+,SetForceDisable4KSupport_neg,PASS
+,GetForceDisable4KSupport_pos,PASS
+,GetForceDisable4KSupport_neg,PASS
+,dsGetVideoEOTF_pos          ,PASS
+,dsGetVideoEOTF_neg          ,PASS
+,dsGetMatrixCoefficients_pos ,FAIL
+,dsGetMatrixCoefficients_neg ,PASS
+,dsGetColorDepth_pos         ,FAIL
+,dsGetColorDepth_neg         ,PASS
+,dsGetColorSpace_pos         ,FAIL
+,dsGetColorSpace_neg         ,PASS
+,dsGetQuantizationRange_pos  ,FAIL
+,dsGetQuantizationRange_neg  ,PASS
+,dsGetCurrentOutputSettings_pos,FAIL
+,dsGetCurrentOutputSettings_neg,PASS
+,dsIsOutputHDR_pos           ,FAIL
+,dsIsOutputHDR_neg           ,PASS
+,dsResetOutputToSDR_pos      ,FAIL
+,dsResetOutputToSDR_neg      ,PASS
+,dsSetHdmiPreference_pos     ,PASS
+,dsSetHdmiPreference_neg     ,PASS
+,dsGetHdmiPreference_pos     ,FAIL
+,dsGetHdmiPreference_neg     ,PASS
+,dsGetIgnoreEDIDStatus_pos   ,FAIL
+,dsGetIgnoreEDIDStatus_neg   ,PASS
+,dsSetBackgroundColor_pos    ,FAIL
+,dsSetBackgroundColor_neg    ,PASS
+,dsSetForceHDRMode_pos       ,FAIL
+,dsSetForceHDRMode_neg       ,PASS
+,dsColorDepthCapb_pos        ,FAIL
+,dsColorDepthCapb_neg        ,PASS
+,dsGetPreferredColorDepth_pos,FAIL
+,dsGetPreferredColorDepth_neg,PASS
+,dsSetPreferredColorDepth_pos,FAIL
+,dsSetPreferredColorDepth_neg,PASS
+L2 dsVideoPort - Source,EnableDisabledVideoPorts    ,PASS
+,VerifyDisplayAndPortStatus  ,FAIL
+,RetrieveVerifySurroundModeCapb  ,FAIL
+,VerifySupportedTvRes            ,FAIL
+,GetHDRCapabilities              ,FAIL
+,GetHDCPStatus                   ,PASS
+,VerifyHDCPProtocolStatus        ,FAIL
+,SetAndGetHdmiPreference         ,FAIL
+,GetColorSpace                   ,FAIL
+,GetColorDepth                   ,FAIL
+,GetQuantizationRange            ,FAIL
+,GetMatrixCoefficients           ,FAIL
+,SetAndGetResolution_src         ,FAIL
+,SetAndGetPreferredColorDepth_src,PASS
+,CheckColorDepthCapb_src,FAIL
+,,
+,dsAudioPortInit_pos,PASS
+,dsAudioPortInit_negs,PASS
+,dsAudioPortTerm_poss,PASS
+,dsAudioPortTerm_negs,PASS
+,dsGetAudioPort_pos s,PASS
+,dsGetAudioPort_neg s,PASS
+,dsGetAudioFormat_pos,FAIL
+,dsGetAudioFormat_neg,FAIL
+,dsGetAudioCompression_pos,FAIL
+,dsGetAudioCompression_neg,PASS
+,dsSetAudioCompression_pos,FAIL
+,dsSetAudioCompression_neg,PASS
+,dsGetDialogEnhance_pos   ,FAIL
+,dsGetDialogEnhance_neg   ,PASS
+,dsSetDialogEnhance_pos   ,FAIL
+,dsSetDialogEnhance_neg   ,PASS
+,dsGetDolbyVolumeMode_pos ,FAIL
+,dsGetDolbyVolumeMode_neg ,PASS
+,dsSetDolbyVolumeMode_pos ,FAIL
+,dsSetDolbyVolumeMode_neg ,PASS
+,dsGetIntelliEqMode_pos   ,PASS
+,dsGetIntelliEqMode_neg   ,FAIL
+,dsSetIntelliEqMode_pos   ,PASS
+,dsSetIntelliEqMode_neg   ,FAIL
+,dsGetVolumeLeveller_pos  ,FAIL
+,dsGetVolumeLeveller_neg  ,PASS
+,dsSetVolumeLeveller_pos  ,FAIL
+,dsSetVolumeLeveller_neg  ,PASS
+,dsGetBassEnhancer_pos    ,PASS
+,dsGetBassEnhancer_neg    ,FAIL
+,dsSetBassEnhancer_pos    ,PASS
+,dsSetBassEnhancer_neg    ,FAIL
+,dsIsSurroundDecoderOn_pos,PASS
+,dsIsSurroundDecoderOn_neg,FAIL
+,dsEnableSurroundDecoder_pos,PASS
+,dsEnableSurroundDecoder_neg,PASS
+,dsGetDRCMode_pos           ,FAIL
+,dsGetDRCMode_neg           ,PASS
+,dsSetDRCMode_pos           ,FAIL
+,dsSetDRCMode_neg           ,PASS
+,dsGetSurroundVirt_pos      ,PASS
+,dsGetSurroundVirt_neg      ,FAIL
+,dsSetSurroundVirt_pos      ,PASS
+,dsSetSurroundVirt_neg      ,FAIL
+,dsGetMISteering_pos        ,PASS
+,dsGetMISteering_neg        ,FAIL
+,dsSetMISteering_pos        ,PASS
+,dsSetMISteering_neg        ,PASS
+,dsGetGraphicEqMode_pos     ,PASS
+,dsGetGraphicEqMode_neg     ,FAIL
+,dsSetGraphicEqMode_pos     ,PASS
+,dsSetGraphicEqMode_neg     ,FAIL
+,dsGetMS12AudioProfList_pos ,PASS
+,dsGetMS12AudioProfList_neg ,FAIL
+,dsGetMS12AudioProf_pos     ,PASS
+,dsGetMS12AudioProf_neg     ,FAIL
+,dsGetStereoMode_pos        ,PASS
+,dsGetStereoMode_neg        ,PASS
+,dsSetStereoMode_pos        ,FAIL
+,dsSetStereoMode_neg        ,PASS
+,dsGetStereoAuto_pos        ,PASS
+,dsGetStereoAuto_neg        ,FAIL
+,dsSetStereoAuto_pos        ,PASS
+,dsSetStereoAuto_neg        ,FAIL
+,dsGetAudioGain_pos         ,FAIL
+,dsGetAudioGain_neg         ,FAIL
+,dsSetAudioGain_pos         ,FAIL
+,dsSetAudioGain_neg         ,FAIL
+,dsGetAudioLevel_pos        ,FAIL
+,dsGetAudioLevel_neg        ,FAIL
+,dsSetAudioLevel_pos        ,FAIL
+,dsSetAudioLevel_neg        ,FAIL
+,dsGetAudioDelay_pos        ,FAIL
+,dsGetAudioDelay_neg        ,PASS
+,dsSetAudioDelay_pos        ,FAIL
+,dsSetAudioDelay_neg        ,PASS
+,dsSetAudioAtmosOutMode_pos ,FAIL
+,dsSetAudioAtmosOutMode_neg ,PASS
+,dsGetSinkDeviceAtmosCap_pos,FAIL
+,dsGetSinkDeviceAtmosCap_neg,PASS
+,dsIsAudioMute_pos          ,FAIL
+,dsIsAudioMute_neg          ,PASS
+,dsIsAudioPortEnabled_pos   ,FAIL
+,dsIsAudioPortEnabled_neg   ,PASS
+,dsEnableAudioPort_pos      ,FAIL
+,dsEnableAudioPort_neg      ,PASS
+,dsEnableLEConfig_pos       ,PASS
+,dsEnableLEConfig_neg       ,FAIL
+,dsGetLEConfig_pos          ,PASS
+,dsGetLEConfig_neg          ,FAIL
+,dsSetMS12AudioProf_pos     ,PASS
+,dsSetMS12AudioProf_neg     ,FAIL
+,dsSetAudioMute_pos         ,FAIL
+,dsSetAudioMute_neg         ,PASS
+,dsIsAudioMSDecode_pos      ,PASS
+,dsIsAudioMSDecode_neg      ,PASS
+,dsIsAudioMS12Decode_pos    ,FAIL
+,dsIsAudioMS12Decode_neg    ,PASS
+,dsAudioOutIsConn_pos       ,FAIL
+,dsAudioOutIsConn_neg       ,FAIL
+,dsAudioOutRegConnCB_pos    ,FAIL
+,dsAudioOutRegConnCB_neg    ,FAIL
+,dsAudioFmtUpdateRegCB_pos  ,FAIL
+,dsAudioFmtUpdateRegCB_neg  ,PASS
+,dsGetAudioCaps_pos         ,FAIL
+,dsGetAudioCaps_neg         ,PASS
+,dsGetMS12Caps_pos          ,FAIL
+,dsGetMS12Caps_neg          ,PASS
+,dsSetAssocAudioMixing_pos  ,FAIL
+,dsSetAssocAudioMixing_neg  ,PASS
+,dsGetAssocAudioMixing_pos  ,FAIL
+,dsGetAssocAudioMixing_neg  ,PASS
+,dsSetFaderControl_pos      ,FAIL
+,dsSetFaderControl_neg      ,PASS
+,dsGetFaderControl_pos      ,FAIL
+,dsGetFaderControl_neg      ,PASS
+,dsSetPrimaryLang_pos       ,FAIL
+,dsSetPrimaryLang_neg       ,FAIL
+,dsGetPrimaryLang_pos       ,FAIL
+,dsGetPrimaryLang_neg       ,PASS
+,dsSetSecondaryLang_pos     ,FAIL
+,dsSetSecondaryLang_neg     ,FAIL
+,dsGetSecondaryLang_pos     ,FAIL
+,dsGetSecondaryLang_neg     ,PASS
+,dsSetAudioMixLevels_pos    ,PASS
+,dsSetAudioMixLevels_neg    ,FAIL
+,dsAudioAtmosCapsRegCB_pos  ,FAIL
+,dsAudioAtmosCapsRegCB_neg  ,PASS
+,dsGetSupportedARCTypes_pos ,PASS
+,dsGetSupportedARCTypes_neg ,FAIL
+,dsAudioSetSAD_pos          ,PASS
+,dsAudioSetSAD_neg          ,FAIL
+,dsAudioEnableARC_pos          ,PASS
+L2 DS Source AudioSetting,EnableDisableVerifyPortStatus,FAIL
+,GetAndVerifyMS12Capabilities ,FAIL
+,SetAndGetAudioCompression    ,FAIL
+,SetAndGetDialogEnhancement   ,FAIL
+,SetAndGetDolbyVolumeMode     ,FAIL
+,SetAndGetIntelligentEqualizerMode,FAIL
+,SetAndGetVolumeLeveller          ,PASS
+,SetAndGetBassEnhancer            ,FAIL
+,EnableAndVerifySurroundDecoder   ,PASS
+,SetAndGetDRCMode                 ,PASS
+,SetAndGetSurroundVirtualizer     ,FAIL
+,SetAndGetMISteering              ,PASS
+,SetAndGetGraphicEqualizerMode    ,PASS
+,EnableDisableAndRetrieveLEConfig ,PASS
+,CheckMS12DecodeSupport           ,PASS
+,CheckMS11DecodeSupport           ,FAIL
+,SetAndGetStereoMode              ,PASS
+,AudioMuteVerification            ,FAIL
+,SetAndGetAudioDelay              ,FAIL
+,GetAudioCapabilities             ,FAIL
+,EnableDisableRetrieveAudioMixing ,FAIL
+,AudioPortControl                 ,FAIL
+,SetAndGetPrimaryLanguage,FAIL
+,SetAndGetSecondaryLanguage,FAIL
+,,
+L1 dsHost,dsHostInit_L1_positive         ,PASS
+,dsHostInit_L1_negative         ,PASS
+,dsHostTerm_L1_positive         ,PASS
+,dsHostTerm_L1_negative         ,PASS
+,dsGetCPUTemperature_L1_positive,PASS
+,dsGetSocIDFromSDK_L1_positive  ,PASS
+,dsGetSocIDFromSDK_L1_negative  ,PASS
+,dsGetCPUTemperature_L1_negative,PASS
+,dsGetHostEDID_L1_positive      ,FAIL
+,dsGetHostEDID_L1_negative,PASS
+L2 dsHost - Source, L2_GetCPUTemperature  ,PASS
+, L2_GetAndVerifySocID,FAIL
+,,
+L1 dsVideoDevice,dsVideoDeviceInit_positive     ,PASS
+,dsVideoDeviceTerm_positive      ,PASS
+,dsGetVideoDevice_positive      ,PASS
+,dsSetDFC_positive  ,FAIL
+,dsGetHDRCaps_positive          ,FAIL
+,dsGetSupportVidFormats_positive,FAIL
+,dsGetVideoCodecInfo_positive   ,FAIL
+,dsSetFRFMode_positive          ,PASS
+,dsGetFRFMode_positive          ,PASS
+,dsGetCurrDispFramerate_positive,PASS
+,dsSetDisplayframerate_positive ,PASS
+,dsRegFrameratePreCB_positive   ,PASS
+,dsRegFrameratePostCB_positive  ,PASS
+,dsVideoDeviceInit_negative     ,PASS
+,dsVideoDeviceTerm_negative     ,PASS
+,dsGetVideoDevice_negative      ,PASS
+,dsSetDFC_negative              ,FAIL
+,dsGetHDRCaps_negative          ,PASS
+,dsGetSupportVidFormats_negative,PASS
+,dsGetVideoCodecInfo_negative   ,PASS
+,dsSetFRFMode_negative          ,FAIL
+,dsGetFRFMode_negative          ,FAIL
+,dsGetCurrDispFramerate_negative,FAIL
+,dsSetDisplayframerate_negative ,FAIL
+,dsRegFrameratePreCB_negative   ,FAIL
+,dsRegFrameratePostCB_negative  ,FAIL
+,dsGetDFC_positive              ,FAIL
+,dsForceDisableHDR_positive     ,PASS
+,dsGetDFC_negative              ,PASS
+,dsForceDisableHDR_negative     ,FAIL
+L2 dsVideoDevice - Source],GetHDRCapabilities,FAIL
+,GetSupportedVideoCodingFormats,FAIL
+,SetAndGetDFC,FAIL
+,GetVideoCodecInfo,FAIL
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,

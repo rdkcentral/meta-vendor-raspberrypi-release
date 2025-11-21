@@ -22,6 +22,8 @@ The [Packages And Versions](VendorPackagesAndVersions.md) file provides a table 
 
 ## Test Resultes
 Q3/M09 Test results [here](https://jira.rdkcentral.com/jira/browse/RDKEVL-6443)
+Test results are attached in docs folder (https://github.com/rdkcentral/meta-vendor-raspberrypi-release/releases/tags/<RELEASE_VERSION>/docs).
+For faster access, refer to the CSV files; the comprehensive results are documented in the Excel files.
 
 ## License Details
 This project is distributed under the terms outlined in the associated [License](LICENSE) and [Notice](NOTICE) files. Please review these files for detailed information.

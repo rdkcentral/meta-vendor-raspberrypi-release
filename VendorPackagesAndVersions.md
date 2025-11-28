@@ -4,7 +4,7 @@
 |--------------|-----------------|
 | lib32-packagegroup-hal-raspberrypi4 | 1.0.1-r0 |
 | lib32-packagegroup-kernel-modules-raspberrypi4 | 6.1.77-r0 |
-| lib32-packagegroup-vendor-layer | 4.8.0-r0 |
+| lib32-packagegroup-vendor-layer | 4.9.0-r0 |
 | kernel | 6.1.77-r0 |
 | kernel-6.1.77-v8 | 6.1.77-r0 |
 | kernel-devicetree | 6.1.77-r0 |
@@ -1814,10 +1814,10 @@
 | lib32-bluez-firmware-rpidistro-bcm43430a1-hcd | 1.0.0-r0 |
 | lib32-bluez-firmware-rpidistro-bcm4345c0-hcd | 1.0.0-r0 |
 | lib32-bluez-firmware-rpidistro-cypress-license | 1.0.0-r0 |
-| lib32-devicesettings-hal-raspberrypi4 | 1.3.1-r0 |
+| lib32-devicesettings-hal-raspberrypi4 | 1.3.2-r0 |
 | lib32-displayinfo-soc | 1.0.0-r0 |
-| lib32-essos | 1.1.59-r0 |
-| lib32-essos-examples | 1.1.59-r0 |
+| lib32-essos | 1.1.61-r0 |
+| lib32-essos-examples | 1.1.61-r0 |
 | lib32-ffmpeg | 4.2.2-r2 |
 | lib32-gst-drm-plugins-rpi | 1.0-r0 |
 | lib32-gstreamer1.0 | 1.18.5-r0 |
@@ -2181,7 +2181,7 @@
 | lib32-libgstvideo-1.0-0 | 1.18.5-r0 |
 | lib32-libgstwayland-1.0-0 | 1.18.5-r0 |
 | lib32-libgstwebrtc-1.0-0 | 1.18.5-r0 |
-| lib32-libiarmmgrs-deepsleep-hal0 | 1.1.0-r0 |
+| lib32-libiarmmgrs-deepsleep-hal0 | 1.1.1-r0 |
 | lib32-libiarmmgrs-power-hal0 | 1.2.0-r0 |
 | lib32-libkms1 | 2.4.110-r0 |
 | lib32-libmms0 | 0.6.4-r0 |
@@ -2197,6 +2197,7 @@
 | lib32-libswresample3 | 4.2.2-r2 |
 | lib32-libsystemaudioplatform1 | 1.0.1-r0 |
 | lib32-libvulkan1 | 1.3.204.1-r0 |
+| lib32-libwayland-egl1 | 1.20.0-r0 |
 | lib32-linux-firmware-rpidistro-bcm43430 | 1.0.0-r0 |
 | lib32-linux-firmware-rpidistro-bcm43436 | 1.0.0-r0 |
 | lib32-linux-firmware-rpidistro-bcm43436s | 1.0.0-r0 |
@@ -2351,8 +2352,8 @@
 | lib32-userland | 20220323-r0 |
 | lib32-userland-doc | 20220323-r0 |
 | lib32-vulkan-tools | 1.3.204-r0 |
-| lib32-westeros | 1.1.59-r0 |
-| lib32-westeros-simplebuffer | 1.1.59-r0 |
-| lib32-westeros-simpleshell | 1.1.59-r0 |
-| lib32-westeros-sink | 1.1.59-r0 |
-| lib32-westeros-soc-drm | 1.1.59-r0 |
+| lib32-westeros | 1.1.61-r0 |
+| lib32-westeros-simplebuffer | 1.1.61-r0 |
+| lib32-westeros-simpleshell | 1.1.61-r0 |
+| lib32-westeros-sink | 1.1.61-r0 |
+| lib32-westeros-soc-drm | 1.1.61-r0 |

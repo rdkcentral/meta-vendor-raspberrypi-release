@@ -21,13 +21,13 @@ The [Packages And Versions](VendorPackagesAndVersions.md) file provides a table 
 | meta-oss-vendor-raspberrypi | refs/tags/4.1.2 | refs/tags/4.1.1 |
 | meta-product-raspberrypi | refs/tags/4.1.2 | refs/tags/4.1.1 |
 | meta-raspberrypi | ab5815a2ca0a460398878f77a7e39bc1a6dfe0bf | ab5815a2ca0a460398878f77a7e39bc1a6dfe0bf |
-| meta-rdk-auxiliary | refs/tags/1.6.0 | refs/tags/1.5.1 |
+| meta-rdk-auxiliary | refs/tags/1.6.0 | refs/tags/1.6.0 |
 | meta-rdk-halif-headers | refs/tags/3.0.2 | refs/tags/3.0.2 |
 | meta-rdk-oss-reference | refs/tags/4.9.0 | refs/tags/4.9.0 |
 | meta-stack-layering-support | refs/tags/3.0.1 | refs/tags/3.0.1 |
 | meta-vendor-raspberrypi-dev | refs/tags/4.9.1 | refs/tags/4.9.0 |
 | poky | refs/tags/rdk-4.4.1 | refs/tags/rdk-4.4.1 |
-| rdke-common-config | refs/tags/1.0.10 | refs/tags/1.0.8 |
+| rdke-common-config | refs/tags/1.0.10 | refs/tags/1.0.10 |
 | rdke-stb-config | refs/tags/1.0.0 | refs/tags/1.0.0 |
 | meta-image-support-rdke | refs/tags/1.0.0 | refs/tags/1.0.0 |
 

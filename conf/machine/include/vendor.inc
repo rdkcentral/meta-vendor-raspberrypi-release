@@ -1,10 +1,16 @@
+# To support layered ipk generation
+
 PROJECT_BRANCH ?= "${RDKE_GITHUB_BRANCH}"
 
-VENDOR_LAYER_VERSION = "4.9.1"
+#TODO  Need to configure artifactory path
+RDK_ARTIFACTS_BASE_URL ?= ""
 
 VENDOR_EXTENSION = "-vendor"
-VENDOR_LAYER_EXTENSION = "${MACHINE}${VENDOR_EXTENSION}"
 
+# Vendor IPK configuration
+
+VENDOR_LAYER_VERSION = "4.9.1"
+VENDOR_LAYER_EXTENSION = "${MACHINE}${VENDOR_EXTENSION}"
 PACKAGE_EXTRA_ARCHS:append = " ${VENDOR_LAYER_EXTENSION}"
 OPKG_ARCH_PRIORITY:${VENDOR_LAYER_EXTENSION} = "255"
 
@@ -15,10 +21,10 @@ VENDOR_IPK_SERVER_PATH ?= "${RDK_ARTIFACTS_BASE_URL}/${VENDOR_IPK_PATH}"
 IPK_FEED_URIS += " \
                 ${VENDOR_LAYER_EXTENSION}##${VENDOR_IPK_SERVER_PATH} "
 
-# OSS IPK configuration
+# Vendor OSS IPK configuration
+
 OSS_LAYER_VERSION = "4.10.0"
 VENDOR_OSS = "${@get_oss_arch(d)}${VENDOR_EXTENSION}"
-
 PACKAGE_EXTRA_ARCHS:append = "${@ '' if '${VENDOR_OSS}' == '${OSS_LAYER_ARCH}' else ' ${VENDOR_OSS}'}"
 OPKG_ARCH_PRIORITY:${VENDOR_OSS} = "265"
 OSS_MACHINE = "${@get_oss_machine(d)}"
@@ -26,6 +32,7 @@ OSS_MACHINE = "${@get_oss_machine(d)}"
 VENDOR_OSS_IPK_PATH ?= "${VENDOR_OSS}/${OSS_LAYER_VERSION}/ipks/"
 VENDOR_OSS_IPK_SERVER_PATH ?= "${RDK_ARTIFACTS_BASE_URL}/${VENDOR_OSS_IPK_PATH}"
 
+# To set the remote feeds
 IPK_FEED_URIS += " \
                 ${VENDOR_OSS}##${VENDOR_OSS_IPK_SERVER_PATH} "
 

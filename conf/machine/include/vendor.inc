@@ -3,7 +3,8 @@ PROJECT_BRANCH ?= "${RDKE_GITHUB_BRANCH}"
 VENDOR_LAYER_VERSION = "4.9.1"
 
 VENDOR_LAYER_EXTENSION = "${MACHINE}-vendor"
-VENDOR_IPK_SERVER_PATH ?= "${RDK_ARTIFACTS_BASE_URL}/${MACHINE}-release/${VENDOR_LAYER_VERSION}/${MACHINE}/ipks/debug"
+#VENDOR_IPK_SERVER_PATH ?= "${RDK_ARTIFACTS_BASE_URL}/${MACHINE}-release/${VENDOR_LAYER_VERSION}/${MACHINE}/ipks/debug"
+VENDOR_IPK_SERVER_PATH = "https://partners.artifactory.comcast.com/artifactory/rdke-rdkm-dbg/raspberrypi4-64-rdke-release/firmware-update/raspberrypi4-64-rdke/"
 
 PACKAGE_EXTRA_ARCHS:append = " ${VENDOR_LAYER_EXTENSION}"
 

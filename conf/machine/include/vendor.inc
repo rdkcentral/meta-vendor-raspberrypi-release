@@ -7,7 +7,7 @@ RDK_ARTIFACTS_BASE_URL ?= ""
 
 VENDOR_EXTENSION = "-vendor"
 VENDOR_IPK_TYPE = "release"
-VENDOR_IPK_REL_VERSION = "${VENDOR_IPK_TYPE}"
+VENDOR_IPK_REL_VERSION = "develop"
 
 # Vendor IPK configuration
 

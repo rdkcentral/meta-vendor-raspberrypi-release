@@ -48,6 +48,7 @@ CMDLINE_ISOL_CPUS ?= "${@setup_isolcpus(d)}"
 # if the MAC addresses are omitted, random values will be used
 CMDLINE_RNDIS ?= ""
 
+# Enable legacy sys/fs/cgroup/memory support for DAC
 CMDLINE = " \
     ${CMDLINE_ISOL_CPUS} \
     ${CMDLINE_DWC_OTG} \
@@ -59,6 +60,7 @@ CMDLINE = " \
     ${CMDLINE_PITFT} \
     ${CMDLINE_DEBUG} \
     ${CMDLINE_RNDIS} \
+    cgroup_enable=memory cgroup_memory=1 \
     "
 
 do_compile() {

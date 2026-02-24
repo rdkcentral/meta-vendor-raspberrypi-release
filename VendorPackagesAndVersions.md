@@ -2,9 +2,9 @@
 
 | Package Name | Package Version |
 |--------------|-----------------|
-| lib32-packagegroup-hal-raspberrypi4 | 1.0.1-r0 |
+| lib32-packagegroup-hal-raspberrypi4 | 1.0.2-r0 |
 | lib32-packagegroup-kernel-modules-raspberrypi4 | 6.1.77-r0 |
-| lib32-packagegroup-vendor-layer | 4.9.0-r0 |
+| lib32-packagegroup-vendor-layer | 4.10.0-r0 |
 | kernel | 6.1.77-r0 |
 | kernel-6.1.77-v8 | 6.1.77-r0 |
 | kernel-devicetree | 6.1.77-r0 |
@@ -105,8 +105,6 @@
 | kernel-module-au8522-common-6.1.77-v8 | 6.1.77-r0 |
 | kernel-module-au8522-decoder-6.1.77-v8 | 6.1.77-r0 |
 | kernel-module-au8522-dig-6.1.77-v8 | 6.1.77-r0 |
-| kernel-module-authenc-6.1.77-v8 | 6.1.77-r0 |
-| kernel-module-authencesn-6.1.77-v8 | 6.1.77-r0 |
 | kernel-module-ax25-6.1.77-v8 | 6.1.77-r0 |
 | kernel-module-ax88179-178a-6.1.77-v8 | 6.1.77-r0 |
 | kernel-module-ax88796b-6.1.77-v8 | 6.1.77-r0 |
@@ -134,7 +132,6 @@
 | kernel-module-binfmt-misc-6.1.77-v8 | 6.1.77-r0 |
 | kernel-module-blake2b-generic-6.1.77-v8 | 6.1.77-r0 |
 | kernel-module-block2mtd-6.1.77-v8 | 6.1.77-r0 |
-| kernel-module-blocklayoutdriver-6.1.77-v8 | 6.1.77-r0 |
 | kernel-module-bluetooth-6.1.77-v8 | 6.1.77-r0 |
 | kernel-module-bluetooth-6lowpan-6.1.77-v8 | 6.1.77-r0 |
 | kernel-module-bme680-core-6.1.77-v8 | 6.1.77-r0 |
@@ -174,7 +171,6 @@
 | kernel-module-cast-common-6.1.77-v8 | 6.1.77-r0 |
 | kernel-module-cast5-generic-6.1.77-v8 | 6.1.77-r0 |
 | kernel-module-catc-6.1.77-v8 | 6.1.77-r0 |
-| kernel-module-cbc-6.1.77-v8 | 6.1.77-r0 |
 | kernel-module-cc2520-6.1.77-v8 | 6.1.77-r0 |
 | kernel-module-ccm-6.1.77-v8 | 6.1.77-r0 |
 | kernel-module-ccs811-6.1.77-v8 | 6.1.77-r0 |
@@ -263,16 +259,13 @@
 | kernel-module-display-connector-6.1.77-v8 | 6.1.77-r0 |
 | kernel-module-dlm-6.1.77-v8 | 6.1.77-r0 |
 | kernel-module-dm-bio-prison-6.1.77-v8 | 6.1.77-r0 |
-| kernel-module-dm-bufio-6.1.77-v8 | 6.1.77-r0 |
 | kernel-module-dm-cache-6.1.77-v8 | 6.1.77-r0 |
 | kernel-module-dm-cache-smq-6.1.77-v8 | 6.1.77-r0 |
-| kernel-module-dm-crypt-6.1.77-v8 | 6.1.77-r0 |
 | kernel-module-dm-delay-6.1.77-v8 | 6.1.77-r0 |
 | kernel-module-dm-integrity-6.1.77-v8 | 6.1.77-r0 |
 | kernel-module-dm-log-6.1.77-v8 | 6.1.77-r0 |
 | kernel-module-dm-log-userspace-6.1.77-v8 | 6.1.77-r0 |
 | kernel-module-dm-mirror-6.1.77-v8 | 6.1.77-r0 |
-| kernel-module-dm-mod-6.1.77-v8 | 6.1.77-r0 |
 | kernel-module-dm-multipath-6.1.77-v8 | 6.1.77-r0 |
 | kernel-module-dm-persistent-data-6.1.77-v8 | 6.1.77-r0 |
 | kernel-module-dm-raid-6.1.77-v8 | 6.1.77-r0 |
@@ -280,7 +273,6 @@
 | kernel-module-dm-round-robin-6.1.77-v8 | 6.1.77-r0 |
 | kernel-module-dm-snapshot-6.1.77-v8 | 6.1.77-r0 |
 | kernel-module-dm-thin-pool-6.1.77-v8 | 6.1.77-r0 |
-| kernel-module-dm-user-6.1.77-v8 | 6.1.77-r0 |
 | kernel-module-dm-writecache-6.1.77-v8 | 6.1.77-r0 |
 | kernel-module-dm-zero-6.1.77-v8 | 6.1.77-r0 |
 | kernel-module-dm9601-6.1.77-v8 | 6.1.77-r0 |
@@ -403,7 +395,6 @@
 | kernel-module-esp4-6.1.77-v8 | 6.1.77-r0 |
 | kernel-module-esp6-6.1.77-v8 | 6.1.77-r0 |
 | kernel-module-esp6-offload-6.1.77-v8 | 6.1.77-r0 |
-| kernel-module-essiv-6.1.77-v8 | 6.1.77-r0 |
 | kernel-module-exc3000-6.1.77-v8 | 6.1.77-r0 |
 | kernel-module-exfat-6.1.77-v8 | 6.1.77-r0 |
 | kernel-module-ezusb-6.1.77-v8 | 6.1.77-r0 |
@@ -1812,13 +1803,16 @@
 | lib32-apparmor-vendor | 1.0.1-r0 |
 | lib32-audio-service-rpi | 1.0-r0 |
 | lib32-bluez-firmware-rpidistro-bcm43430a1-hcd | 1.0.0-r0 |
+| lib32-bluez-firmware-rpidistro-bcm43430b0-hcd | 1.0.0-r0 |
 | lib32-bluez-firmware-rpidistro-bcm4345c0-hcd | 1.0.0-r0 |
+| lib32-bluez-firmware-rpidistro-bcm4345c5-hcd | 1.0.0-r0 |
 | lib32-bluez-firmware-rpidistro-cypress-license | 1.0.0-r0 |
-| lib32-devicesettings-hal-raspberrypi4 | 1.3.2-r0 |
+| lib32-devicesettings-hal-raspberrypi4 | 1.3.3-r0 |
 | lib32-displayinfo-soc | 1.0.0-r0 |
 | lib32-essos | 1.1.61-r0 |
 | lib32-essos-examples | 1.1.61-r0 |
 | lib32-ffmpeg | 4.2.2-r2 |
+| lib32-gpu-layer | 1.0.0-r0 |
 | lib32-gst-drm-plugins-rpi | 1.0-r0 |
 | lib32-gstreamer1.0 | 1.18.5-r0 |
 | lib32-gstreamer1.0-doc | 1.18.5-r0 |
@@ -1951,6 +1945,7 @@
 | lib32-gstreamer1.0-plugins-bad-smoothstreaming | 1.18.5-r0 |
 | lib32-gstreamer1.0-plugins-bad-sndfile | 1.18.5-r0 |
 | lib32-gstreamer1.0-plugins-bad-speed | 1.18.5-r0 |
+| lib32-gstreamer1.0-plugins-bad-subenc | 1.18.5-r0 |
 | lib32-gstreamer1.0-plugins-bad-switchbin | 1.18.5-r0 |
 | lib32-gstreamer1.0-plugins-bad-timecode | 1.18.5-r0 |
 | lib32-gstreamer1.0-plugins-bad-transcode | 1.18.5-r0 |
@@ -2190,7 +2185,7 @@
 | lib32-libpulse0 | 15.0-r0 |
 | lib32-libpulsecommon | 15.0-r0 |
 | lib32-libpulsecore | 15.0-r0 |
-| lib32-librcechal1.3.7 | 1.0.3-r0 |
+| lib32-librcechal1.4.0 | 1.1.0-r0 |
 | lib32-librsvg-2-2 | 2.40.21-r0 |
 | lib32-librsvg-2-doc | 2.40.21-r0 |
 | lib32-librsvg-2-gtk | 2.40.21-r0 |
@@ -2347,7 +2342,7 @@
 | lib32-rdk-gstreamer-utils-platform | 1.2.0-r0 |
 | lib32-rsvg | 2.40.21-r0 |
 | lib32-secapi2-adapter-rpi | 1.0-r0 |
-| lib32-sysint-soc | 1.1.7-r0 |
+| lib32-sysint-soc | 1.1.9-r0 |
 | lib32-udev-rules-rpi | 1.0-r0 |
 | lib32-userland | 20220323-r0 |
 | lib32-userland-doc | 20220323-r0 |

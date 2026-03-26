@@ -2,9 +2,9 @@
 
 | Package Name | Package Version |
 |--------------|-----------------|
-| lib32-packagegroup-hal-raspberrypi4 | 1.0.2-r0 |
+| lib32-packagegroup-hal-raspberrypi4 | 1.0.3-r0 |
 | lib32-packagegroup-kernel-modules-raspberrypi4 | 6.1.77-r0 |
-| lib32-packagegroup-vendor-layer | 4.10.0-r0 |
+| lib32-packagegroup-vendor-layer | 4.11.0-r0 |
 | kernel | 6.1.77-r0 |
 | kernel-6.1.77-v8 | 6.1.77-r0 |
 | kernel-devicetree | 6.1.77-r0 |
@@ -1807,10 +1807,10 @@
 | lib32-bluez-firmware-rpidistro-bcm4345c0-hcd | 1.0.0-r0 |
 | lib32-bluez-firmware-rpidistro-bcm4345c5-hcd | 1.0.0-r0 |
 | lib32-bluez-firmware-rpidistro-cypress-license | 1.0.0-r0 |
-| lib32-devicesettings-hal-raspberrypi4 | 1.3.3-r0 |
+| lib32-devicesettings-hal-raspberrypi4 | 1.3.6-r0 |
 | lib32-displayinfo-soc | 1.0.0-r0 |
-| lib32-essos | 1.1.61-r0 |
-| lib32-essos-examples | 1.1.61-r0 |
+| lib32-essos | 1.01.64-r0 |
+| lib32-essos-examples | 1.01.64-r0 |
 | lib32-ffmpeg | 4.2.2-r2 |
 | lib32-gpu-layer | 1.0.0-r0 |
 | lib32-gst-drm-plugins-rpi | 1.0-r0 |
@@ -2342,13 +2342,15 @@
 | lib32-rdk-gstreamer-utils-platform | 1.2.0-r0 |
 | lib32-rsvg | 2.40.21-r0 |
 | lib32-secapi2-adapter-rpi | 1.0-r0 |
-| lib32-sysint-soc | 1.1.9-r0 |
+| lib32-sysint-soc | 1.1.13-r0 |
 | lib32-udev-rules-rpi | 1.0-r0 |
 | lib32-userland | 20220323-r0 |
 | lib32-userland-doc | 20220323-r0 |
-| lib32-vulkan-tools | 1.3.204-r0 |
-| lib32-westeros | 1.1.61-r0 |
-| lib32-westeros-simplebuffer | 1.1.61-r0 |
-| lib32-westeros-simpleshell | 1.1.61-r0 |
-| lib32-westeros-sink | 1.1.61-r0 |
-| lib32-westeros-soc-drm | 1.1.61-r0 |
+| lib32-vkmark | git-r0 |
+| lib32-vulkan-headers | 1.3.204.1-r0 |
+| lib32-vulkan-tools | 1.3.204.1-r0 |
+| lib32-westeros | 1.01.64-r0 |
+| lib32-westeros-simplebuffer | 1.01.64-r0 |
+| lib32-westeros-simpleshell | 1.01.64-r0 |
+| lib32-westeros-sink | 1.01.64-r0 |
+| lib32-westeros-soc-drm | 1.01.64-r0 |

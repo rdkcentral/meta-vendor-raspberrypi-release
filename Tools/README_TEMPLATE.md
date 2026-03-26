@@ -14,16 +14,12 @@ The [Packages And Versions](VendorPackagesAndVersions.md) file provides a table 
 ### Meta-layer Versions
 {{VERSION_TABLE}}
 
-* RDKE RaspberryPi Vendor build instructions -> [here](https://github.com/rdkcentral/vendor-manifest-raspberrypi?tab=readme-ov-file#vendor-manifest-raspberrypi)
+* RDKE RaspberryPi Vendor build instructions -> [here](https://github.com/rdkcentral/vendor-manifest-raspberrypi/tree/4.10.0?tab=readme-ov-file#vendor-manifest-for-raspberry-pi)
 * RDKE RaspberryPi flashing instructions -> [here](https://wiki.rdkcentral.com/display/RDKM/Build+Setup+and+Flashing+Instructions)
 
 ## Release includes
-* vulkan Support
-
-## Test Resultes
-Q3/M09 Test results [here](https://jira.rdkcentral.com/jira/browse/RDKEVL-6443)
-Test results are attached in docs folder (https://github.com/rdkcentral/meta-vendor-raspberrypi-release/releases/tags/<RELEASE_VERSION>/docs).
-For faster access, refer to the CSV files; the comprehensive results are documented in the Excel files.
+* Upgrade OSS Version to 4.10.0.
+* Supported new OSS consumption model architecture.
 
 ## License Details
 This project is distributed under the terms outlined in the associated [License](LICENSE) and [Notice](NOTICE) files. Please review these files for detailed information.

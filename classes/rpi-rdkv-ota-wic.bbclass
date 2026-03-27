@@ -94,4 +94,4 @@ python do_create_rdkv_ota_wic_image() {
 }
 
 addtask do_create_rdkv_ota_wic_image after do_image_complete do_rootfs before do_build
-
+do_clean[cleanfiles] += "${DEPLOY_DIR_IMAGE}/*-ota.wic ${DEPLOY_DIR_IMAGE}/*-ota.wic.tar.gz"

@@ -4,7 +4,7 @@
 |--------------|-----------------|
 | lib32-packagegroup-hal-raspberrypi4 | 1.0.3-r0 |
 | lib32-packagegroup-kernel-modules-raspberrypi4 | 6.1.77-r0 |
-| lib32-packagegroup-vendor-layer | 4.11.0-r0 |
+| lib32-packagegroup-vendor-layer | 4.11.1-r0 |
 | kernel | 6.1.77-r0 |
 | kernel-6.1.77-v8 | 6.1.77-r0 |
 | kernel-devicetree | 6.1.77-r0 |
@@ -1807,7 +1807,7 @@
 | lib32-bluez-firmware-rpidistro-bcm4345c0-hcd | 1.0.0-r0 |
 | lib32-bluez-firmware-rpidistro-bcm4345c5-hcd | 1.0.0-r0 |
 | lib32-bluez-firmware-rpidistro-cypress-license | 1.0.0-r0 |
-| lib32-devicesettings-hal-raspberrypi4 | 1.3.6-r0 |
+| lib32-devicesettings-hal-raspberrypi4 | 1.3.7-r0 |
 | lib32-displayinfo-soc | 1.0.0-r0 |
 | lib32-essos | 1.01.64-r0 |
 | lib32-essos-examples | 1.01.64-r0 |

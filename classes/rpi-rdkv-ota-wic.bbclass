@@ -30,7 +30,10 @@ python do_create_rdkv_ota_wic_image() {
     note("OTA_IMAGE_NAME: {}".format(ota_image_name))
     note("OTA_TAR_GZ_NAME: {}".format(ota_tar_gz_name))
 
-    # Find the generated WIC image
+    # Find the generated WIC image.
+    # Only match the exact IMAGE_NAME timestamp so that OTA is created only when
+    # a new .wic was actually produced. If the image was restored from sstate and
+    # no matching .wic exists for the current timestamp, skip silently.
     wic_image = None
     for file in os.listdir(deploy_dir_image):
         if file.startswith(image_basename) and file.endswith('.wic'):
@@ -38,7 +41,9 @@ python do_create_rdkv_ota_wic_image() {
             break
 
     if not wic_image:
-        fatal("Not able to find {}*.wic for OTA image creation.".format(image_basename))
+        note("No WIC image found matching '{}*.wic'. "
+             "Image was likely restored from sstate; skipping OTA creation.".format(image_basename))
+        return
 
     # Create a copy of the uncompressed WIC image
     ota_wic_image = os.path.join(deploy_dir_image, ota_image_name)
@@ -92,6 +97,9 @@ python do_create_rdkv_ota_wic_image() {
     os.remove(ota_wic_image)
     note("Removed intermediate OTA WIC file to save space: {}".format(ota_wic_image))
 }
+
+# vardepsexclude for DATETIME — prevents the basehash-changed reparse error.
+do_create_rdkv_ota_wic_image[vardepsexclude] += "DATETIME"
 
 addtask do_create_rdkv_ota_wic_image after do_image_complete do_rootfs before do_build
 

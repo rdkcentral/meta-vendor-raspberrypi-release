@@ -98,8 +98,9 @@ python do_create_rdkv_ota_wic_image() {
     note("Removed intermediate OTA WIC file to save space: {}".format(ota_wic_image))
 }
 
-# vardepsexclude for DATETIME — prevents the basehash-changed reparse error.
-do_create_rdkv_ota_wic_image[vardepsexclude] += "DATETIME"
+# Exclude DATETIME and the timestamp-derived image name variables used by this
+# task to avoid basehash changes and re-signing on every parse.
+do_create_rdkv_ota_wic_image[vardepsexclude] += "DATETIME IMAGE_NAME OTA_IMAGE_NAME"
 
 addtask do_create_rdkv_ota_wic_image after do_image_complete do_rootfs before do_build
 

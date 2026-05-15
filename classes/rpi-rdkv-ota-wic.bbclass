@@ -8,6 +8,7 @@
 OTA_IMAGE_NAME ?= "${IMAGE_NAME}-ota.wic"
 
 python do_create_rdkv_ota_wic_image() {
+    import glob
     import os
     import subprocess
     import tarfile
@@ -88,12 +89,12 @@ python do_create_rdkv_ota_wic_image() {
     size_after = os.path.getsize(ota_wic_image)
     note("Size of {} after deleting partitions and truncating: {} bytes".format(ota_wic_image, size_after))
 
-    # Remove any previously created OTA archives for this image before creating a new one.
-    import glob
+    # Remove any previously created OTA archives for this image.
+    # This must happen even when OTA creation is skipped.
     for old_ota in glob.glob(os.path.join(deploy_dir_image, image_basename_var + '*-ota.wic.tar.gz')):
         note("Removing previously created OTA archive: {}".format(old_ota))
         os.remove(old_ota)
-
+        
     ota_tar_gz_path = os.path.join(deploy_dir_image, ota_tar_gz_name)
     with tarfile.open(ota_tar_gz_path, "w:gz") as tar:
         tar.add(ota_wic_image, arcname=os.path.basename(ota_wic_image))
@@ -106,4 +107,3 @@ python do_create_rdkv_ota_wic_image() {
 }
 
 addtask do_create_rdkv_ota_wic_image after do_image_complete do_rootfs before do_build
-

@@ -90,7 +90,7 @@ python do_create_rdkv_ota_wic_image() {
     note("Size of {} after deleting partitions and truncating: {} bytes".format(ota_wic_image, size_after))
 
     # Remove any previously created OTA archives for this image.
-    # This must happen even when OTA creation is skipped.
+    # This cleanup runs only when generating a new OTA image.
     for old_ota in glob.glob(os.path.join(deploy_dir_image, image_basename_var + '*-ota.wic.tar.gz')):
         note("Removing previously created OTA archive: {}".format(old_ota))
         os.remove(old_ota)

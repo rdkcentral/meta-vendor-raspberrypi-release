@@ -15,6 +15,7 @@ python do_create_rdkv_ota_wic_image() {
 
     deploy_dir_image = d.getVar('DEPLOY_DIR_IMAGE')
     image_basename = d.getVar('IMAGE_NAME')
+    image_basename_var = d.getVar('IMAGE_BASENAME')
 
     note("DEPLOY_DIR_IMAGE: {}".format(deploy_dir_image))
     note("IMAGE_NAME: {}".format(image_basename))
@@ -87,6 +88,12 @@ python do_create_rdkv_ota_wic_image() {
     size_after = os.path.getsize(ota_wic_image)
     note("Size of {} after deleting partitions and truncating: {} bytes".format(ota_wic_image, size_after))
 
+    # Remove any previously created OTA archives for this image before creating a new one.
+    import glob
+    for old_ota in glob.glob(os.path.join(deploy_dir_image, image_basename_var + '*-ota.wic.tar.gz')):
+        note("Removing previously created OTA archive: {}".format(old_ota))
+        os.remove(old_ota)
+
     ota_tar_gz_path = os.path.join(deploy_dir_image, ota_tar_gz_name)
     with tarfile.open(ota_tar_gz_path, "w:gz") as tar:
         tar.add(ota_wic_image, arcname=os.path.basename(ota_wic_image))
@@ -97,10 +104,6 @@ python do_create_rdkv_ota_wic_image() {
     os.remove(ota_wic_image)
     note("Removed intermediate OTA WIC file to save space: {}".format(ota_wic_image))
 }
-
-# Exclude DATETIME and the timestamp-derived image name variables used by this
-# task to avoid basehash changes and re-signing on every parse.
-do_create_rdkv_ota_wic_image[vardepsexclude] += "DATETIME IMAGE_NAME OTA_IMAGE_NAME"
 
 addtask do_create_rdkv_ota_wic_image after do_image_complete do_rootfs before do_build
 

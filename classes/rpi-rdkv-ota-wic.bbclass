@@ -94,7 +94,7 @@ python do_create_rdkv_ota_wic_image() {
     for old_ota in glob.glob(os.path.join(deploy_dir_image, image_basename_var + '*-ota.wic.tar.gz')):
         note("Removing previously created OTA archive: {}".format(old_ota))
         os.remove(old_ota)
-        
+
     ota_tar_gz_path = os.path.join(deploy_dir_image, ota_tar_gz_name)
     with tarfile.open(ota_tar_gz_path, "w:gz") as tar:
         tar.add(ota_wic_image, arcname=os.path.basename(ota_wic_image))

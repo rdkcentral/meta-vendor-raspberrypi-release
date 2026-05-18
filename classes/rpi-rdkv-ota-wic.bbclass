@@ -95,7 +95,7 @@ python do_create_rdkv_ota_wic_image() {
 
 addtask do_create_rdkv_ota_wic_image after do_image_complete do_rootfs before do_build
 
-python do_cleanall_ota_wic_images() {
+python do_clean_ota_wic_images() {
     import glob
     import os
     from bb import note
@@ -108,7 +108,10 @@ python do_cleanall_ota_wic_images() {
 
     for old_ota in glob.glob(os.path.join(deploy_dir_image, image_basename + '*-ota.wic.tar.gz')):
         note("cleanall removing OTA archive: {}".format(old_ota))
-        os.remove(old_ota)
+        try:
+            os.remove(old_ota)
+        except FileNotFoundError:
+            pass
 }
 
-do_clean[postfuncs] += "do_cleanall_ota_wic_images"
+do_clean[postfuncs] += "do_clean_ota_wic_images"

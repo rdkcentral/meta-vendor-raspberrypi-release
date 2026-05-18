@@ -107,7 +107,7 @@ python do_clean_ota_wic_images() {
         return
 
     for old_ota in glob.glob(os.path.join(deploy_dir_image, image_basename + '*-ota.wic.tar.gz')):
-        note("cleanall removing OTA archive: {}".format(old_ota))
+        note("Removing OTA archive: {}".format(old_ota))
         try:
             os.remove(old_ota)
         except FileNotFoundError:

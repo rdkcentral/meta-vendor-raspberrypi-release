@@ -8,6 +8,7 @@
 OTA_IMAGE_NAME ?= "${IMAGE_NAME}-ota.wic"
 
 python do_create_rdkv_ota_wic_image() {
+    import glob
     import os
     import subprocess
     import tarfile
@@ -15,6 +16,7 @@ python do_create_rdkv_ota_wic_image() {
 
     deploy_dir_image = d.getVar('DEPLOY_DIR_IMAGE')
     image_basename = d.getVar('IMAGE_NAME')
+    image_basename_var = d.getVar('IMAGE_BASENAME')
 
     note("DEPLOY_DIR_IMAGE: {}".format(deploy_dir_image))
     note("IMAGE_NAME: {}".format(image_basename))
@@ -30,7 +32,10 @@ python do_create_rdkv_ota_wic_image() {
     note("OTA_IMAGE_NAME: {}".format(ota_image_name))
     note("OTA_TAR_GZ_NAME: {}".format(ota_tar_gz_name))
 
-    # Find the generated WIC image
+    # Find the generated WIC image.
+    # Only match the exact IMAGE_NAME timestamp so that OTA is created only when
+    # a new .wic was actually produced. If the image was restored from sstate and
+    # no matching .wic exists for the current timestamp, skip silently.
     wic_image = None
     for file in os.listdir(deploy_dir_image):
         if file.startswith(image_basename) and file.endswith('.wic'):
@@ -38,7 +43,9 @@ python do_create_rdkv_ota_wic_image() {
             break
 
     if not wic_image:
-        fatal("Not able to find {}*.wic for OTA image creation.".format(image_basename))
+        note("No WIC image found matching '{}*.wic'. "
+             "Image was likely restored from sstate; skipping OTA creation.".format(image_basename))
+        return
 
     # Create a copy of the uncompressed WIC image
     ota_wic_image = os.path.join(deploy_dir_image, ota_image_name)
@@ -82,6 +89,12 @@ python do_create_rdkv_ota_wic_image() {
     size_after = os.path.getsize(ota_wic_image)
     note("Size of {} after deleting partitions and truncating: {} bytes".format(ota_wic_image, size_after))
 
+    # Remove any previously created OTA archives for this image.
+    # This cleanup runs only when generating a new OTA image.
+    for old_ota in glob.glob(os.path.join(deploy_dir_image, image_basename_var + '*-ota.wic.tar.gz')):
+        note("Removing previously created OTA archive: {}".format(old_ota))
+        os.remove(old_ota)
+
     ota_tar_gz_path = os.path.join(deploy_dir_image, ota_tar_gz_name)
     with tarfile.open(ota_tar_gz_path, "w:gz") as tar:
         tar.add(ota_wic_image, arcname=os.path.basename(ota_wic_image))
@@ -95,3 +108,23 @@ python do_create_rdkv_ota_wic_image() {
 
 addtask do_create_rdkv_ota_wic_image after do_image_complete do_rootfs before do_build
 
+python do_clean_ota_wic_images() {
+    import glob
+    import os
+    from bb import note
+
+    deploy_dir_image = d.getVar('DEPLOY_DIR_IMAGE')
+    image_basename = d.getVar('IMAGE_BASENAME')
+
+    if not deploy_dir_image or not image_basename:
+        return
+
+    for old_ota in glob.glob(os.path.join(deploy_dir_image, image_basename + '*-ota.wic.tar.gz')):
+        note("Removing OTA archive: {}".format(old_ota))
+        try:
+            os.remove(old_ota)
+        except FileNotFoundError:
+            pass
+}
+
+do_clean[postfuncs] += "do_clean_ota_wic_images"

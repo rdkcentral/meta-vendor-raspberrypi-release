@@ -4,7 +4,7 @@
 |--------------|-----------------|
 | lib32-packagegroup-hal-raspberrypi4 | 1.0.3-r0 |
 | lib32-packagegroup-kernel-modules-raspberrypi4 | 6.1.77-r0 |
-| lib32-packagegroup-vendor-layer | 4.11.3-r0 |
+| lib32-packagegroup-vendor-layer | 4.11.4-r0 |
 | kernel | 6.1.77-r0 |
 | kernel-6.1.77-v8 | 6.1.77-r0 |
 | kernel-devicetree | 6.1.77-r0 |
@@ -1807,7 +1807,7 @@
 | lib32-bluez-firmware-rpidistro-bcm4345c0-hcd | 1.0.0-r0 |
 | lib32-bluez-firmware-rpidistro-bcm4345c5-hcd | 1.0.0-r0 |
 | lib32-bluez-firmware-rpidistro-cypress-license | 1.0.0-r0 |
-| lib32-devicesettings-hal-raspberrypi4 | 1.4.2-r0 |
+| lib32-devicesettings-hal-raspberrypi4 | 1.4.4-r0 |
 | lib32-displayinfo-soc | 1.0.0-r0 |
 | lib32-essos | 1.01.64-r0 |
 | lib32-essos-examples | 1.01.64-r0 |
@@ -2185,7 +2185,7 @@
 | lib32-libpulse0 | 15.0-r0 |
 | lib32-libpulsecommon | 15.0-r0 |
 | lib32-libpulsecore | 15.0-r0 |
-| lib32-librcechal1.4.0 | 1.2.0-r0 |
+| lib32-librcechal1.4.0 | 1.2.2-r0 |
 | lib32-librsvg-2-2 | 2.40.21-r0 |
 | lib32-librsvg-2-doc | 2.40.21-r0 |
 | lib32-librsvg-2-gtk | 2.40.21-r0 |

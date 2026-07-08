@@ -25,7 +25,7 @@ IPK_FEED_URIS += " \
 
 # Vendor OSS IPK configuration
 
-OSS_LAYER_VERSION = "4.12.0"
+OSS_LAYER_VERSION = "4.13.0"
 VENDOR_OSS = "${@get_oss_arch(d)}${VENDOR_EXTENSION}"
 PACKAGE_EXTRA_ARCHS:append = "${@ '' if '${VENDOR_OSS}' == '${OSS_LAYER_ARCH}' else ' ${VENDOR_OSS}'}"
 OPKG_ARCH_PRIORITY:${VENDOR_OSS} = "265"

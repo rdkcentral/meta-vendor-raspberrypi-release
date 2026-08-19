@@ -47,12 +47,19 @@ update_dropbearkey_to_rw_path() {
 }
 ROOTFS_POSTPROCESS_COMMAND += "update_dropbearkey_to_rw_path; "
 
-# To Configure/Override default dropbear RSAKEY DIR
+# To configure/override default dropbear RSA host key directory
+DROPBEAR_RSAKEY_DIR ?= "/opt/dropbear"
+
 override_dropbear_rsakey_dir() {
-    if [ -f "${IMAGE_ROOTFS}/etc/default/dropbear" ]; then
-        echo "DROPBEAR_RSAKEY_DIR=\"/opt/dropbear/\"" >> ${IMAGE_ROOTFS}/etc/default/dropbear
+    dropbear_conf="${IMAGE_ROOTFS}/etc/default/dropbear"
+    if [ -f "$dropbear_conf" ]; then
+        if grep -q '^DROPBEAR_RSAKEY_DIR=' "$dropbear_conf"; then
+            sed -i "s|^DROPBEAR_RSAKEY_DIR=.*|DROPBEAR_RSAKEY_DIR=\"${DROPBEAR_RSAKEY_DIR}\"|" "$dropbear_conf"
+        else
+            echo "DROPBEAR_RSAKEY_DIR=\"${DROPBEAR_RSAKEY_DIR}\"" >> "$dropbear_conf"
+        fi
     else
-        echo "No dropbear conf file detected at '${IMAGE_ROOTFS}', SSH may not work."
+        echo "No dropbear conf file detected at '${IMAGE_ROOTFS}/etc/default/dropbear', SSH may not work."
     fi
 }
 ROOTFS_POSTPROCESS_COMMAND += "override_dropbear_rsakey_dir; "

@@ -40,9 +40,26 @@ IPK_FEED_URIS += " \
 # SSH Key shall be generated in RW section - /opt.
 update_dropbearkey_to_rw_path() {
     if [ -f "${IMAGE_ROOTFS}/lib/systemd/system/dropbearkey.service" ]; then
-        sed -i '/\/var/d; /\/var\/lib/d; s/\/etc\/dropbear/\/opt\/dropbear/g; s/\/var\/lib\/dropbear/\/opt\/dropbear/g' ${IMAGE_ROOTFS}/lib/systemd/system/dropbearkey.service
+        sed -i '/\/var/d; /\/var\/lib/d;/\/etc\/dropbear/d' ${IMAGE_ROOTFS}/lib/systemd/system/dropbearkey.service
     else
         echo "No dropbearkey.service file detected at '${IMAGE_ROOTFS}', SSH may not work."
     fi
 }
 ROOTFS_POSTPROCESS_COMMAND += "update_dropbearkey_to_rw_path; "
+
+# To configure/override default dropbear RSA host key directory
+DROPBEAR_RSAKEY_DIR ?= "/opt/dropbear"
+
+override_dropbear_rsakey_dir() {
+    dropbear_conf="${IMAGE_ROOTFS}/etc/default/dropbear"
+    if [ -f "$dropbear_conf" ]; then
+        if grep -q '^DROPBEAR_RSAKEY_DIR=' "$dropbear_conf"; then
+            sed -i "s|^DROPBEAR_RSAKEY_DIR=.*|DROPBEAR_RSAKEY_DIR=\"${DROPBEAR_RSAKEY_DIR}\"|" "$dropbear_conf"
+        else
+            echo "DROPBEAR_RSAKEY_DIR=\"${DROPBEAR_RSAKEY_DIR}\"" >> "$dropbear_conf"
+        fi
+    else
+        echo "No dropbear conf file detected at '${IMAGE_ROOTFS}/etc/default/dropbear', SSH may not work."
+    fi
+}
+ROOTFS_POSTPROCESS_COMMAND += "override_dropbear_rsakey_dir; "

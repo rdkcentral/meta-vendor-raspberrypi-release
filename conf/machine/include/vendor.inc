@@ -7,6 +7,7 @@ RDK_ARTIFACTS_BASE_URL ?= ""
 
 VENDOR_EXTENSION = "-vendor"
 VENDOR_IPK_TYPE = "release"
+VENDOR_SPDX_TARBALL = "file:///home/jenkins/community_shared/raspberrypi4-64-rdke-vendor/tarballs/raspberrypi4-64-rdke-sbom.tgz"
 
 # Vendor IPK configuration
 
@@ -22,6 +23,7 @@ VENDOR_IPK_SERVER_PATH ?= "${RDK_ARTIFACTS_BASE_URL}/${VENDOR_IPK_PATH}"
 # To set the remote feeds
 IPK_FEED_URIS += " \
                 ${VENDOR_LAYER_EXTENSION}##${VENDOR_IPK_SERVER_PATH} "
+CVE_LAYER_FEED_PATH += "${VENDOR_LAYER_EXTENSION}##file:///home/jenkins/community_shared/raspberrypi4-64-rdke-vendor/tarballs/raspberrypi4-64-rdke-vendor.tgz;sha256sum=bebda16386603e934150fa2c1203f240c080c09b26bc2d910fdda19e847d0e2e"
 
 # Vendor OSS IPK configuration
 
@@ -36,6 +38,7 @@ VENDOR_OSS_IPK_SERVER_PATH ?= "${RDK_ARTIFACTS_BASE_URL}/${VENDOR_OSS_IPK_PATH}"
 # To set the remote feeds
 IPK_FEED_URIS += " \
                 ${VENDOR_OSS}##${VENDOR_OSS_IPK_SERVER_PATH} "
+CVE_LAYER_FEED_PATH += "${VENDOR_OSS}##file:///home/jenkins/community_shared/raspberrypi4-64-rdke-vendor/tarballs/rdk-arm64-oss-vendor.tgz;sha256sum=f167b44b03adc6d1ef2ce783573cd3c5bc8adcf459b4a7830f7354b1e885f826"
 
 # SSH Key shall be generated in RW section - /opt.
 update_dropbearkey_to_rw_path() {

@@ -4,7 +4,7 @@
 |--------------|-----------------|
 | lib32-packagegroup-hal-raspberrypi4 | 1.0.3-r0 |
 | lib32-packagegroup-kernel-modules-raspberrypi4 | 6.1.77-r0 |
-| lib32-packagegroup-vendor-layer | 4.13.1-r0 |
+| lib32-packagegroup-vendor-layer | 4.14.0-r0 |
 | kernel | 6.1.77-r0 |
 | kernel-6.1.77-v8 | 6.1.77-r0 |
 | kernel-devicetree | 6.1.77-r0 |
@@ -1800,7 +1800,7 @@
 | kernel-vmlinux | 6.1.77-r0 |
 | lib32-alsa-plugins | 1.2.6-r0 |
 | lib32-alsa-plugins-pulseaudio-conf | 1.2.6-r0 |
-| lib32-apparmor-vendor | 1.0.1-r0 |
+| lib32-apparmor-vendor | 1.0.2-r0 |
 | lib32-audio-service-rpi | 1.0-r0 |
 | lib32-bluez-firmware-rpidistro-bcm43430a1-hcd | 1.0.0-r0 |
 | lib32-bluez-firmware-rpidistro-bcm43430b0-hcd | 1.0.0-r0 |
@@ -1811,8 +1811,8 @@
 | lib32-bluez5-doc | 5.48-r0 |
 | lib32-bluez5-noinst-tools | 5.48-r0 |
 | lib32-bluez5-obex | 5.48-r0 |
-| lib32-devicesettings-hal-raspberrypi4 | 1.4.10-r0 |
-| lib32-displayinfo-soc | 1.0.0-r0 |
+| lib32-devicesettings-hal-raspberrypi4 | 1.4.11-r0 |
+| lib32-displayinfo-soc | 1.0.1-r0 |
 | lib32-essos | 2.1.2-r0 |
 | lib32-essosrmgr | 1.99-r0 |
 | lib32-ffmpeg | 4.2.2-r2 |
@@ -2182,7 +2182,7 @@
 | lib32-libgstwayland-1.0-0 | 1.18.5-r0 |
 | lib32-libgstwebrtc-1.0-0 | 1.18.5-r0 |
 | lib32-libiarmmgrs-deepsleep-hal0 | 1.1.1-r0 |
-| lib32-libiarmmgrs-power-hal0 | 1.2.0-r0 |
+| lib32-libiarmmgrs-power-hal0 | 1.2.1-r0 |
 | lib32-libkms1 | 2.4.110-r0 |
 | lib32-libmms0 | 0.6.4-r0 |
 | lib32-libpulse-mainloop-glib0 | 15.0-r0 |
@@ -2190,12 +2190,12 @@
 | lib32-libpulse0 | 15.0-r0 |
 | lib32-libpulsecommon | 15.0-r0 |
 | lib32-libpulsecore | 15.0-r0 |
-| lib32-librcechal1.4.0 | 1.2.2-r0 |
+| lib32-librcechal1.4.0 | 1.2.3-r0 |
 | lib32-librsvg-2-2 | 2.40.21-r0 |
 | lib32-librsvg-2-doc | 2.40.21-r0 |
 | lib32-librsvg-2-gtk | 2.40.21-r0 |
 | lib32-libswresample3 | 4.2.2-r2 |
-| lib32-libsystemaudioplatform1 | 1.0.1-r0 |
+| lib32-libsystemaudioplatform1 | 1.0.2-r0 |
 | lib32-libvulkan1 | 1.3.204.1-r0 |
 | lib32-libwayland-egl1 | 1.20.0-r0 |
 | lib32-linux-firmware-rpidistro-bcm43430 | 1.0.0-r0 |
@@ -2206,8 +2206,8 @@
 | lib32-linux-firmware-rpidistro-broadcom-license | 1.0.0-r0 |
 | lib32-mesa-megadriver | 22.0.3-r0 |
 | lib32-mesa-vulkan-drivers | 22.0.3-r0 |
-| lib32-mfrlibs-hal-raspberrypi4 | 1.1.0-r0 |
-| lib32-miracast-hal-raspberrypi4 | 1.0.1-r0 |
+| lib32-mfrlibs-hal-raspberrypi4 | 1.2.0-r0 |
+| lib32-miracast-hal-raspberrypi4 | 1.0.2-r0 |
 | lib32-mpg123 | 1.29.3-r0 |
 | lib32-mpg123-doc | 1.29.3-r0 |
 | lib32-pango | 1.44.7-r0 |
@@ -2344,16 +2344,16 @@
 | lib32-pulseaudio-module-volume-restore | 15.0-r0 |
 | lib32-pulseaudio-pa-info | 15.0-r0 |
 | lib32-pulseaudio-server | 15.0-r0 |
-| lib32-rdk-gstreamer-utils-platform | 1.2.0-r0 |
+| lib32-rdk-gstreamer-utils-platform | 1.2.1-r0 |
 | lib32-rsvg | 2.40.21-r0 |
 | lib32-secapi2-adapter-rpi | 1.0-r0 |
-| lib32-sysint-soc | 1.1.18-r0 |
+| lib32-sysint-soc | 1.1.21-r0 |
 | lib32-udev-rules-rpi | 1.0-r0 |
 | lib32-vkmark | git-r0 |
 | lib32-vulkan-headers | 1.3.204.1-r0 |
 | lib32-vulkan-tools | 1.3.204.1-r0 |
-| lib32-westeros | 2.1.2-r0 |
-| lib32-westeros-simplebuffer | 2.1.2-r0 |
-| lib32-westeros-simpleshell | 2.1.2-r0 |
-| lib32-westeros-sink | 2.1.1-r0 |
-| lib32-westeros-soc-drm | 2.1.2-r0 |
+| lib32-westeros | 2.1.3-r0 |
+| lib32-westeros-simplebuffer | 2.1.3-r0 |
+| lib32-westeros-simpleshell | 2.1.3-r0 |
+| lib32-westeros-sink | 2.1.3-r0 |
+| lib32-westeros-soc-drm | 2.1.4-r0 |

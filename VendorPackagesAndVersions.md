@@ -4,7 +4,7 @@
 |--------------|-----------------|
 | lib32-packagegroup-hal-raspberrypi4 | 1.0.3-r0 |
 | lib32-packagegroup-kernel-modules-raspberrypi4 | 6.1.77-r0 |
-| lib32-packagegroup-vendor-layer | 4.14.0-r0 |
+| lib32-packagegroup-vendor-layer | 4.15.0-r0 |
 | kernel | 6.1.77-r0 |
 | kernel-6.1.77-v8 | 6.1.77-r0 |
 | kernel-devicetree | 6.1.77-r0 |
@@ -2352,8 +2352,8 @@
 | lib32-vkmark | git-r0 |
 | lib32-vulkan-headers | 1.3.204.1-r0 |
 | lib32-vulkan-tools | 1.3.204.1-r0 |
-| lib32-westeros | 2.1.3-r0 |
-| lib32-westeros-simplebuffer | 2.1.3-r0 |
-| lib32-westeros-simpleshell | 2.1.3-r0 |
-| lib32-westeros-sink | 2.1.3-r0 |
+| lib32-westeros | 2.1.4-r0 |
+| lib32-westeros-simplebuffer | 2.1.4-r0 |
+| lib32-westeros-simpleshell | 2.1.4-r0 |
+| lib32-westeros-sink | 2.1.4-r0 |
 | lib32-westeros-soc-drm | 2.1.4-r0 |

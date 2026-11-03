@@ -7,6 +7,7 @@ RDK_ARTIFACTS_BASE_URL ?= ""
 
 VENDOR_EXTENSION = "-vendor"
 VENDOR_IPK_TYPE = "release"
+VENDOR_SPDX_TARBALL = "file:///home/jenkins/community_shared/raspberrypi4-64-rdke-vendor/tarballs/raspberrypi4-64-rdke-sbom.tgz"
 
 # Vendor IPK configuration
 

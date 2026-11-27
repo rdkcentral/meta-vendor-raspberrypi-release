@@ -4,7 +4,7 @@
 |--------------|-----------------|
 | lib32-packagegroup-hal-raspberrypi4 | 1.0.3-r0 |
 | lib32-packagegroup-kernel-modules-raspberrypi4 | 6.1.77-r0 |
-| lib32-packagegroup-vendor-layer | 4.15.0-r0 |
+| lib32-packagegroup-vendor-layer | 4.16.0-r0 |
 | kernel | 6.1.77-r0 |
 | kernel-6.1.77-v8 | 6.1.77-r0 |
 | kernel-devicetree | 6.1.77-r0 |
@@ -1811,7 +1811,7 @@
 | lib32-bluez5-doc | 5.48-r0 |
 | lib32-bluez5-noinst-tools | 5.48-r0 |
 | lib32-bluez5-obex | 5.48-r0 |
-| lib32-devicesettings-hal-raspberrypi4 | 1.4.11-r0 |
+| lib32-devicesettings-hal-raspberrypi4 | 1.4.12-r0 |
 | lib32-displayinfo-soc | 1.0.1-r0 |
 | lib32-essos | 2.1.2-r0 |
 | lib32-essosrmgr | 1.99-r0 |
@@ -2347,7 +2347,7 @@
 | lib32-rdk-gstreamer-utils-platform | 1.2.1-r0 |
 | lib32-rsvg | 2.40.21-r0 |
 | lib32-secapi2-adapter-rpi | 1.0-r0 |
-| lib32-sysint-soc | 1.1.21-r0 |
+| lib32-sysint-soc | 1.1.23-r0 |
 | lib32-udev-rules-rpi | 1.0-r0 |
 | lib32-vkmark | git-r0 |
 | lib32-vulkan-headers | 1.3.204.1-r0 |
@@ -2357,3 +2357,4 @@
 | lib32-westeros-simpleshell | 2.1.4-r0 |
 | lib32-westeros-sink | 2.1.4-r0 |
 | lib32-westeros-soc-drm | 2.1.4-r0 |
+| lib32-zram | 0.2-r3 |

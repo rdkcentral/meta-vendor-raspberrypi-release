@@ -38,7 +38,8 @@ python do_create_rdkv_ota_wic_image() {
     # no matching .wic exists for the current timestamp, skip silently.
     wic_image = None
     for file in os.listdir(deploy_dir_image):
-        if file.startswith(image_basename) and file.endswith('.wic'):
+        # Skip a stale OTA copy, which also matches '<IMAGE_NAME>*.wic'.
+        if file.startswith(image_basename) and file.endswith('.wic') and file != ota_image_name:
             wic_image = os.path.join(deploy_dir_image, file)
             break
 
@@ -66,25 +67,28 @@ python do_create_rdkv_ota_wic_image() {
                 note("Deleting partition {} with label {}...".format(part_num, part_name))
                 subprocess.run(['sfdisk', '--delete', ota_wic_image, part_num], check=True)
 
-    # Calculate the end sector of the last remaining partition
-    end_sector_output = subprocess.check_output(['parted', '-s', ota_wic_image, 'print']).decode('utf-8')
-    end_sector_str = [line.split()[2] for line in end_sector_output.splitlines() if ' 2 ' in line][0]
+    # Find the exact last sector of partition 2 (/root1). Machine-readable output in
+    # sector units avoids the rounding and decimal-MB vs MiB errors of the default
+    # 'parted print' output. Line format: "<num>:<start>s:<end>s:<size>s:<fs>:<name>:<flags>;"
+    sector_size = 512
+    table_output = subprocess.check_output(
+        ['parted', '-s', '-m', ota_wic_image, 'unit', 's', 'print']).decode('utf-8')
+    partition_ends = {}
+    for line in table_output.splitlines():
+        fields = line.rstrip(';').split(':')
+        if len(fields) >= 3 and fields[0].isdigit():
+            partition_ends[fields[0]] = int(fields[2].rstrip('s'))
+    if sorted(partition_ends) != ['1', '2']:
+        fatal("Expected only partitions 1 and 2 in {} after deletion, found: {}".format(
+            ota_wic_image, sorted(partition_ends)))
 
-    # Convert end_sector_str to sectors
-    if end_sector_str.endswith('KB'):
-        end_sector = int(float(end_sector_str[:-2]) * 1024 / 512)
-    elif end_sector_str.endswith('MB'):
-        end_sector = int(float(end_sector_str[:-2]) * 1024 * 1024 / 512)
-    elif end_sector_str.endswith('GB'):
-        end_sector = int(float(end_sector_str[:-2]) * 1024 * 1024 * 1024 / 512)
-    else:
-        end_sector = int(end_sector_str.replace('s', ''))
+    # The end sector is inclusive, so keep one more sector.
+    end_sector = partition_ends['2']
+    truncate_bytes = (end_sector + 1) * sector_size
+    note("Partition 2 ends at sector {}; truncating to {} bytes.".format(end_sector, truncate_bytes))
 
-    note("Calculated end_sector is {}.".format(end_sector))
-
-    # Truncate the OTA_WIC_IMAGE to the end of the last remaining partition using Python
     with open(ota_wic_image, 'r+b') as f:
-        f.truncate(end_sector * 512)
+        f.truncate(truncate_bytes)
 
     size_after = os.path.getsize(ota_wic_image)
     note("Size of {} after deleting partitions and truncating: {} bytes".format(ota_wic_image, size_after))

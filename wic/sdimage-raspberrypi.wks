@@ -2,7 +2,38 @@
 # long-description: Creates a partitioned SD card image for use with
 # Raspberry Pi. Boot files are located in the first vfat partition.
 
-part /boot --source bootimg-partition --ondisk mmcblk0 --fstype=vfat --label boot --active --align 4096 --size 20
-part /root1 --source rootfs --ondisk mmcblk0 --fstype=ext4 --label root1 --align 4096 --size 1024
-part /root2 --ondisk mmcblk0 --fstype=ext4 --label root2 --align 4096 --size 1024
+# Both rootfs banks must be the same size so an OTA built from `/root1` can be
+# written raw into either bank. For a `--source partition`, `--size` is only a
+# minimum: wic grows it by its default 10 MiB extra space and 1.3 overhead
+# factor (1536 MiB -> 1996.8 MiB). `--fixed-size` is exact, disables both, and
+# fails the build if the rootfs does not fit.
+# OTA does not resize existing partitions; deployed banks must be large enough.
+
+# New SD card layout: /dev/mmcblk0 (not to scale; partition starts aligned to 4 MiB)
+# Minimum SD card: 8 GB (manufacturer capacity).
+# Layout footprint: approximately 7.59 GB (7.07 GiB), including alignment padding.
+#
+#   +--------------------------------------------------------------------------+
+#   | Partition table + initial alignment padding                              |
+#   +------------+---------+--------+---------------+--------------------------+
+#   | Device     | Mount   | FS     | Size          | Contents / purpose       |
+#   +------------+---------+--------+---------------+--------------------------+
+#   | mmcblk0p1  | /boot   | vfat   | 64 MiB fixed  | Firmware, kernel, boot   |
+#   |            |         |        |               | configuration; boot flag |
+#   +------------+---------+--------+---------------+--------------------------+
+#   | mmcblk0p2  | /root1  | ext4   | 1.5 GiB fixed | Bank A: initial rootfs   |
+#   +------------+---------+--------+---------------+--------------------------+
+#   | mmcblk0p3  | /root2  | ext4   | 1.5 GiB fixed | Bank B: initially empty  |
+#   +------------+---------+--------+---------------+--------------------------+
+#   | mmcblk0p4  | /opt    | ext4   | 4 GiB minimum | Persistent data;         |
+#   |            |         |        |               | label: persist           |
+#   +------------+---------+--------+---------------+--------------------------+
+#   | Remaining card space: unallocated                                        |
+#   +--------------------------------------------------------------------------+
+#
+# A/B upgrades write the inactive rootfs bank, then select it for the next boot.
+
+part /boot --source bootimg-partition --ondisk mmcblk0 --fstype=vfat --label boot --active --align 4096 --fixed-size 64
+part /root1 --source rootfs --ondisk mmcblk0 --fstype=ext4 --label root1 --align 4096 --fixed-size 1536
+part /root2 --ondisk mmcblk0 --fstype=ext4 --label root2 --align 4096 --fixed-size 1536
 part /opt --ondisk mmcblk0 --fstype=ext4 --label persist --align 4096 --size 4096

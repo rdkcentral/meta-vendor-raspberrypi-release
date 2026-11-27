@@ -5,13 +5,13 @@
 # Both rootfs banks must be the same size so an OTA built from `/root1` can be
 # written raw into either bank. For a `--source partition`, `--size` is only a
 # minimum: wic grows it by its default 10 MiB extra space and 1.3 overhead
-<<<<<<< HEAD
 # factor (1536 MiB -> 1996.8 MiB). `--fixed-size` is exact, disables both, and
 # fails the build if the rootfs does not fit.
 # OTA does not resize existing partitions; deployed banks must be large enough.
 
 # New SD card layout: /dev/mmcblk0 (not to scale; partition starts aligned to 4 MiB)
-# Require minimum 8GB SDCard
+# Minimum SD card: 8 GB (manufacturer capacity).
+# Layout footprint: approximately 7.59 GB (7.07 GiB), including alignment padding.
 #
 #   +--------------------------------------------------------------------------+
 #   | Partition table + initial alignment padding                              |
